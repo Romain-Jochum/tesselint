@@ -1,0 +1,200 @@
+{
+  "format": "tesselint/ui-fixture-manifest",
+  "version": 1,
+  "runs_root": "tests/fixtures/ui/runs",
+  "source": "tests/fixtures/ui/source.v1.json",
+  "latest": "mini~20260102-090000",
+  "previous": "mini~20260101-090000",
+  "runs": {
+    "mini~20260101-090000": {
+      "kind": "synthetic",
+      "n_stories": 24,
+      "n_epics": 8,
+      "n_tombstones": 1,
+      "proposals": {
+        "merge": 11,
+        "overlap": 2,
+        "split": 2
+      },
+      "cases": {
+        "total": 14,
+        "merge_groups": 10,
+        "split": 2,
+        "overlap": 2
+      },
+      "first_cases": [
+        "mg:US-6.3",
+        "mg:US-4.2",
+        "mg:US-5.1",
+        "mg:US-3.1",
+        "split:US-6.2"
+      ],
+      "hubs": [
+        "US-6.2"
+      ],
+      "multi_option_group": "mg:US-3.1",
+      "multi_option_group_options": [
+        "merge:US-4.1>US-3.1",
+        "merge:US-3.4>US-3.1"
+      ],
+      "hub_story": "US-6.2",
+      "hub_split_key": "split:US-6.2",
+      "borderline_merge_key": "merge:US-1.1>US-8.2",
+      "overlap_keys": [
+        "overlap:US-1.2+US-4.3",
+        "overlap:US-1.3+US-2.2"
+      ],
+      "pair": {
+        "a": "US-6.2",
+        "b": "US-6.3",
+        "overlap": 0.965,
+        "merge": 0.925,
+        "relation": "A_contains_B"
+      },
+      "neighbours_of": {
+        "story": "US-6.2",
+        "top5": [
+          "US-4.2",
+          "US-6.3",
+          "US-5.1",
+          "US-3.2",
+          "US-8.3"
+        ]
+      },
+      "merges_at_merge_0_9": 3,
+      "epic_cell": {
+        "row": "E7",
+        "col": "E8",
+        "pairs": 15,
+        "pairs_at_or_above_t": 2,
+        "t": 0.7
+      }
+    },
+    "mini~20260102-090000": {
+      "kind": "synthetic",
+      "n_stories": 24,
+      "n_epics": 8,
+      "n_tombstones": 2,
+      "proposals": {
+        "merge": 11,
+        "overlap": 2,
+        "split": 2
+      },
+      "cases": {
+        "total": 14,
+        "merge_groups": 10,
+        "split": 2,
+        "overlap": 2
+      },
+      "first_cases": [
+        "mg:US-6.3",
+        "mg:US-4.2",
+        "mg:US-5.1",
+        "mg:US-3.1",
+        "split:US-6.2"
+      ],
+      "hubs": [
+        "US-6.2"
+      ],
+      "multi_option_group": "mg:US-3.1",
+      "multi_option_group_options": [
+        "merge:US-4.1>US-3.1",
+        "merge:US-3.4>US-3.1"
+      ],
+      "hub_story": "US-6.2",
+      "hub_split_key": "split:US-6.2",
+      "borderline_merge_key": "merge:US-1.1>US-8.2",
+      "overlap_keys": [
+        "overlap:US-1.2+US-4.3",
+        "overlap:US-1.3+US-2.2"
+      ],
+      "pair": {
+        "a": "US-6.2",
+        "b": "US-6.3",
+        "overlap": 0.965,
+        "merge": 0.925,
+        "relation": "A_contains_B"
+      },
+      "neighbours_of": {
+        "story": "US-6.2",
+        "top5": [
+          "US-4.2",
+          "US-6.3",
+          "US-5.1",
+          "US-3.2",
+          "US-8.3"
+        ]
+      },
+      "merges_at_merge_0_9": 3,
+      "epic_cell": {
+        "row": "E7",
+        "col": "E8",
+        "pairs": 18,
+        "pairs_at_or_above_t": 2,
+        "t": 0.7
+      }
+    }
+  },
+  "diff": {
+    "a": "mini~20260101-090000",
+    "b": "mini~20260102-090000",
+    "added": [
+      "US-7.6"
+    ],
+    "removed": [
+      "US-2.1"
+    ],
+    "edited": [
+      {
+        "id": "US-1.2",
+        "old_text": "Accept or decline a plot offer. I get an offer when a plot comes free and I'm next in line, and I accept or decline it within fourteen days, so that plots don't sit empty.\n- The offer shows the plot size, a photo and the annual rent.\n- If I don't answer in fourteen days, the offer goes to the next person.\n- Declining twice moves me to the bottom of that list.",
+        "new_text": "Accept or decline a plot offer. I get an offer when a plot comes free and I'm next in line, and I accept or decline it within fourteen days, so that plots don't sit empty. The offer also names the nearest water tap.\n- The offer shows the plot size, a photo and the annual rent.\n- If I don't answer in fourteen days, the offer goes to the next person.\n- Declining twice moves me to the bottom of that list."
+      },
+      {
+        "id": "US-8.1",
+        "old_text": "Settle the allotment fee online. I clear the annual charge for my allotment online from my phone, so that I'm not mailing paper payments to the local authority.\n- The charge falls due each October the first and appears from the start of September.",
+        "new_text": "Settle the allotment fee online. I clear the annual charge for my allotment online from my phone, so that I'm not mailing paper payments to the local authority. I also get the receipt by email.\n- The charge falls due each October the first and appears from the start of September."
+      }
+    ],
+    "renamed": [],
+    "new": [
+      "merge:US-7.2>US-7.6"
+    ],
+    "gone": [
+      "merge:US-3.2>US-2.1"
+    ],
+    "changed": [
+      "merge:US-7.1>US-8.1",
+      "overlap:US-1.2+US-4.3"
+    ],
+    "decisions_to_review": [
+      "merge:US-3.2>US-2.1",
+      "merge:US-7.1>US-8.1",
+      "overlap:US-1.2+US-4.3"
+    ]
+  },
+  "seed_decisions": {
+    "file": "tests/fixtures/ui/decisions.seed.json",
+    "total": 5,
+    "on_latest": {
+      "current": 2,
+      "stale": 2,
+      "missing": 1,
+      "orphaned": 1
+    },
+    "stale_keys": [
+      "merge:US-7.1>US-8.1",
+      "overlap:US-1.2+US-4.3"
+    ],
+    "missing_keys": [
+      "merge:US-3.2>US-2.1"
+    ]
+  },
+  "source_vs_latest": {
+    "edited": [
+      "US-6.1"
+    ],
+    "added": [],
+    "removed": []
+  }
+}

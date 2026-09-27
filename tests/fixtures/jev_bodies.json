@@ -1,0 +1,132 @@
+{
+  "choice_rel": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "rel": {
+        "type": "choice",
+        "choice": "same_area_distinct",
+        "probabilities": {
+          "same_area_distinct": 0.86,
+          "unrelated": 0.07,
+          "A_contains_B": 0.01,
+          "partial_overlap": 0.06,
+          "B_contains_A": 0,
+          "duplicate": 0
+        },
+        "confidence": 0.84
+      }
+    },
+    "usage": {
+      "input_tokens": 602,
+      "output_tokens": 72,
+      "cost": 2.5284e-05
+    },
+    "id": "gen-dec-1790422720-FIXTURE0000000000001",
+    "provider": "TypeSafe"
+  },
+  "noul_atomic_v1": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "atomic": {
+        "type": "noul",
+        "noul": 0.22
+      }
+    },
+    "usage": {
+      "input_tokens": 309,
+      "output_tokens": 20,
+      "cost": 1.2978e-05
+    },
+    "id": "gen-dec-1790422716-FIXTURE0000000000002",
+    "provider": "TypeSafe"
+  },
+  "noul_atomic_v2": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "atomic": {
+        "type": "noul",
+        "noul": 0.73
+      }
+    },
+    "usage": {
+      "input_tokens": 468,
+      "output_tokens": 20,
+      "cost": 1.9656e-05
+    },
+    "id": "gen-dec-0000000000-FIXTURE0000000000005",
+    "provider": "TypeSafe"
+  },
+  "multi_rel_related_sim": {
+    "model": "typesafe/jev-1.13-20260917",
+    "answers": {
+      "rel": {
+        "type": "choice",
+        "choice": "same_area_distinct",
+        "probabilities": {
+          "partial_overlap": 0.06,
+          "B_contains_A": 0,
+          "unrelated": 0.06,
+          "A_contains_B": 0.01,
+          "same_area_distinct": 0.87,
+          "duplicate": 0
+        },
+        "confidence": 0.85
+      },
+      "related": {
+        "type": "noul",
+        "noul": 0.87
+      },
+      "sim": {
+        "type": "score",
+        "score": 1.15,
+        "legend": {
+          "0": "Unrelated: different feature areas",
+          "1": "Same broad area, different capabilities",
+          "2": "Some shared capability",
+          "3": "Largely the same capability, with differences",
+          "4": "Same capability: duplicates"
+        },
+        "probabilities": {
+          "0": 0.01,
+          "1": 0.84,
+          "2": 0.15,
+          "3": 0,
+          "4": 0
+        },
+        "confidence": 0.86
+      }
+    },
+    "usage": {
+      "input_tokens": 711,
+      "output_tokens": 102,
+      "cost": 2.9862e-05
+    },
+    "id": "gen-dec-1790422722-FIXTURE0000000000003",
+    "provider": "TypeSafe"
+  },
+  "error_400_too_many_choices": {
+    "error": {
+      "message": "HTTP 400: {\"detail\":\"Too many choices. Must have at most 255 choices.\"}",
+      "code": 400
+    }
+  },
+  "key_usage": {
+    "data": {
+      "limit": 2,
+      "limit_remaining": 1.999210232,
+      "usage": 0.000789768,
+      "usage_daily": 0,
+      "usage_weekly": 0.000789768,
+      "usage_monthly": 0.000789768,
+      "byok_usage": 0,
+      "byok_usage_daily": 0,
+      "byok_usage_weekly": 0,
+      "byok_usage_monthly": 0,
+      "rate_limit": {
+        "requests": -1,
+        "interval": "10s",
+        "note": "This field is deprecated and safe to ignore."
+      }
+    }
+  }
+}

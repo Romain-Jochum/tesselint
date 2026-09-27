@@ -1,0 +1,104 @@
+{
+  "run_id": "20260102-090000",
+  "started_at": "2026-01-02T09:00:00+00:00",
+  "snapshot_sha256": "90b096f9a9694c4924d9ee59980050fe4221e7399f132a61a17022582d7f494e",
+  "source": {
+    "path": "tests/fixtures/ui/source.v1.json",
+    "format": "json"
+  },
+  "input": {
+    "format": "tesselint/stories",
+    "version": 1,
+    "converter": "tesselint synth/1",
+    "render": "md-clean/1"
+  },
+  "kind": "synthetic",
+  "dry_run": false,
+  "tier": null,
+  "epics": null,
+  "n_stories": 24,
+  "n_tombstones": 2,
+  "n_pairs": 276,
+  "render": "full",
+  "swap": true,
+  "concurrency": 1,
+  "rate_per_s": 10000.0,
+  "max_usd": 1.0,
+  "model_requested": "typesafe/jev-1.13",
+  "questions": {
+    "rel.v1": "b469c4129a85f430a342af3b30092c7be888080073059e26e69dca2f79ce6834",
+    "atomic.v2": "deb719a44988ae08e195a6fa3deefba77dddc240ede90a8433d80eaf18c59751"
+  },
+  "prefilter": {
+    "enabled": false,
+    "k": 10,
+    "top_pct": 2.0,
+    "kept": 148,
+    "recall_vs_jev_overlap": 0.75,
+    "recall_vs_jev_merge": 0.9090909090909091
+  },
+  "thresholds": {
+    "swap_gate": 0.2,
+    "merge": 0.5,
+    "cluster": 0.7,
+    "split": 0.8,
+    "split_corroborated": 0.7,
+    "related": 0.4,
+    "min_words_atomic": 8,
+    "borderline": 0.1
+  },
+  "versions": {
+    "tesselint": "0.1.0"
+  },
+  "estimate": {
+    "jobs": 300,
+    "to_ask": 69,
+    "expected_swaps": 22,
+    "usd": 0.00234694488,
+    "cached": 231
+  },
+  "cost_usd": {
+    "preflight_estimate": 0.00234694488,
+    "live": 0.001972236,
+    "rejected_attempts": 0.0,
+    "cached_equivalent": 0.006341832,
+    "key_usage_delta": 0.001972236
+  },
+  "finished_at": "2026-01-02T09:00:00+00:00",
+  "wall_s": 0.0,
+  "status": "complete",
+  "jobs": {
+    "fwd": 276,
+    "swap": 92,
+    "atomic": 24
+  },
+  "calls": {
+    "live": 92,
+    "cached": 300,
+    "failed": 0,
+    "retries": 0,
+    "by_status": {
+      "200": 92
+    }
+  },
+  "tokens": {
+    "total": 46958,
+    "mean": 510.413043478261,
+    "p95": 590.0
+  },
+  "latency_ms": {
+    "p50": 0.0,
+    "p95": 0.0
+  },
+  "calls_per_s": 0.0,
+  "models_resolved": [
+    "typesafe/jev-1.13-20260917"
+  ],
+  "mixed_models": false,
+  "proposals": {
+    "merge": 11,
+    "overlap": 2,
+    "split": 2,
+    "leave": 1
+  }
+}

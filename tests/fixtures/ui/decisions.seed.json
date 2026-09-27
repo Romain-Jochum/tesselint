@@ -1,0 +1,305 @@
+{
+  "format": "tesselint/decisions",
+  "version": 1,
+  "rev": 1,
+  "decisions": {
+    "merge:US-3.2>US-2.1": {
+      "key": "merge:US-3.2>US-2.1",
+      "kind": "merge",
+      "target": "US-3.2",
+      "stories": [
+        "US-3.2",
+        "US-2.1"
+      ],
+      "action": "accept",
+      "note": "Fold the donation flow into the wish-list story.",
+      "text_hashes": {
+        "US-3.2": "ace5bb328d5433335f88636de75c4eb552ff2b305731ff27a9948a185db9a347",
+        "US-2.1": "627c6d71e5e2767b1698aafb7f98807c8e5628469c68417b2d41a0c86f52ef45"
+      },
+      "titles": {
+        "US-3.2": "Tool donations with a wish list",
+        "US-2.1": "Donate a tool to the shed"
+      },
+      "run": "mini~20260101-090000",
+      "decided_at": "2026-01-01T10:00:00+00:00",
+      "texts": {
+        "US-3.2": "Tool donations with a wish list. I offer a tool I no longer need to the shared shed, and the coordinator accepts it into the catalogue, so that others can borrow it. I also see a wish list of tools the shed is short of, ranked by how often people asked for them.",
+        "US-2.1": "Donate a tool to the shed. I offer a tool I no longer need to the shared shed, and the coordinator accepts it into the catalogue, so that others can borrow it."
+      },
+      "decisive_value": 0.61,
+      "snapshot_sha256": "3b5548c842558dc7dc5d08e0a24926e8eba913ae44fb748e01163c8d190cc294"
+    },
+    "merge:US-7.1>US-8.1": {
+      "key": "merge:US-7.1>US-8.1",
+      "kind": "merge",
+      "target": "US-7.1",
+      "stories": [
+        "US-7.1",
+        "US-8.1"
+      ],
+      "action": "accept",
+      "note": "",
+      "text_hashes": {
+        "US-7.1": "8847a3bacbb078c35431f967cd20b6e18ab6d4b6d6f4064453b713384bfa6b98",
+        "US-8.1": "c65d4a84779b14204e84bfc1a383e5ebf828b28bfc1852b4a78e1b03a912f019"
+      },
+      "titles": {
+        "US-7.1": "Pay annual plot rent",
+        "US-8.1": "Settle the allotment fee online"
+      },
+      "run": "mini~20260101-090000",
+      "decided_at": "2026-01-01T10:00:00+00:00",
+      "texts": {
+        "US-7.1": "Pay annual plot rent. I pay my yearly plot rent by card in the app, so that I don't have to post a cheque to the council.\n- Rent is due on 1 October and the app shows the amount from September.",
+        "US-8.1": "Settle the allotment fee online. I clear the annual charge for my allotment online from my phone, so that I'm not mailing paper payments to the local authority.\n- The charge falls due each October the first and appears from the start of September."
+      },
+      "decisive_value": 0.69,
+      "snapshot_sha256": "3b5548c842558dc7dc5d08e0a24926e8eba913ae44fb748e01163c8d190cc294"
+    },
+    "overlap:US-1.2+US-4.3": {
+      "key": "overlap:US-1.2+US-4.3",
+      "kind": "overlap",
+      "target": "C8",
+      "stories": [
+        "US-1.2",
+        "US-4.3"
+      ],
+      "action": "reject",
+      "note": "Different flows; keep both.",
+      "text_hashes": {
+        "US-1.2": "247345e6fe5a04f97565dcb19f8caf4836875e733675db4440eea8c4625a55e4",
+        "US-4.3": "b97c2635d8ca5ef01c8374fd6d9eed51ab6a9c4f5448052f2580088f6075f563"
+      },
+      "titles": {
+        "US-1.2": "Accept or decline a plot offer",
+        "US-4.3": "Borrow from the seed library"
+      },
+      "run": "mini~20260101-090000",
+      "decided_at": "2026-01-01T10:00:00+00:00",
+      "texts": {
+        "US-1.2": "Accept or decline a plot offer. I get an offer when a plot comes free and I'm next in line, and I accept or decline it within fourteen days, so that plots don't sit empty.\n- The offer shows the plot size, a photo and the annual rent.\n- If I don't answer in fourteen days, the offer goes to the next person.\n- Declining twice moves me to the bottom of that list.",
+        "US-4.3": "Borrow from the seed library. I borrow seed packets from the site seed library and return saved seed from my own crop at the end of the season, so that the library keeps itself stocked.\n- Each variety shows germination notes from past borrowers.\n- I can take up to five packets at a time."
+      },
+      "decisive_value": 0.815,
+      "snapshot_sha256": "3b5548c842558dc7dc5d08e0a24926e8eba913ae44fb748e01163c8d190cc294"
+    },
+    "merge:US-7.2>US-8.3": {
+      "key": "merge:US-7.2>US-8.3",
+      "kind": "merge",
+      "target": "US-7.2",
+      "stories": [
+        "US-7.2",
+        "US-8.3"
+      ],
+      "action": "defer",
+      "note": "Check the concession wording first.",
+      "text_hashes": {
+        "US-7.2": "0d3ba41f488409d3b12e9f28d3fcb7f4d833160743917402b2520c8da9cc0c24",
+        "US-8.3": "7ce099606a9aef854622a7eee1ba5232dabf3d7215483733abed28ebce2915d9"
+      },
+      "titles": {
+        "US-7.2": "Apply for a concession rate",
+        "US-8.3": "Request the reduced fee"
+      },
+      "run": "mini~20260101-090000",
+      "decided_at": "2026-01-01T10:00:00+00:00",
+      "texts": {
+        "US-7.2": "Apply for a concession rate. I apply for the half-price concession by uploading proof of pension or benefits, so that I pay what I can afford.\n- The treasurer approves or rejects each application.\n- Approval lasts one year and must be renewed.",
+        "US-8.3": "Request the reduced fee. I send in evidence of retirement income or welfare support and ask for the 50% discount, so that the cost stays within my means.\n- Each request is signed off or turned down by the committee's finance officer.\n- A granted discount runs for twelve months, then I reapply."
+      },
+      "decisive_value": 0.75,
+      "snapshot_sha256": "3b5548c842558dc7dc5d08e0a24926e8eba913ae44fb748e01163c8d190cc294"
+    },
+    "overlap:US-1.3+US-2.2": {
+      "key": "overlap:US-1.3+US-2.2",
+      "kind": "overlap",
+      "target": "C7",
+      "stories": [
+        "US-1.3",
+        "US-2.2"
+      ],
+      "action": "accept",
+      "note": "",
+      "text_hashes": {
+        "US-1.3": "2da6d6c83704195ca697e121d39ae7e3ce383957657aa5e40fe92a51eb7bc630",
+        "US-2.2": "0edb596910decd1b3ac971a67c7d5dff41e667ae157c98c5dd8c8504ca94966d"
+      },
+      "titles": {
+        "US-1.3": "Split a full plot into halves",
+        "US-2.2": "Check a tool back in"
+      },
+      "run": "mini~20260101-090000",
+      "decided_at": "2026-01-01T10:00:00+00:00",
+      "texts": {
+        "US-1.3": "Split a full plot into halves. I split a full-size plot into two half plots with their own numbers as site coordinator, so that more people on the list can start growing sooner.",
+        "US-2.2": "Check a tool back in. I check a tool back in by scanning the QR tag on it, so that the next borrower can see it's back on the hook.\n- If I haven't checked in an hour after my slot ends, the coordinator gets an alert.\n- Fuel level is recorded for petrol tools."
+      },
+      "decisive_value": 0.83,
+      "snapshot_sha256": "3b5548c842558dc7dc5d08e0a24926e8eba913ae44fb748e01163c8d190cc294"
+    }
+  },
+  "history": [
+    {
+      "rev": 1,
+      "at": "2026-01-01T10:00:00+00:00",
+      "changes": [
+        {
+          "key": "merge:US-3.2>US-2.1",
+          "before": null,
+          "after": {
+            "key": "merge:US-3.2>US-2.1",
+            "kind": "merge",
+            "target": "US-3.2",
+            "stories": [
+              "US-3.2",
+              "US-2.1"
+            ],
+            "action": "accept",
+            "note": "Fold the donation flow into the wish-list story.",
+            "text_hashes": {
+              "US-3.2": "ace5bb328d5433335f88636de75c4eb552ff2b305731ff27a9948a185db9a347",
+              "US-2.1": "627c6d71e5e2767b1698aafb7f98807c8e5628469c68417b2d41a0c86f52ef45"
+            },
+            "titles": {
+              "US-3.2": "Tool donations with a wish list",
+              "US-2.1": "Donate a tool to the shed"
+            },
+            "run": "mini~20260101-090000",
+            "decided_at": "2026-01-01T10:00:00+00:00",
+            "texts": {
+              "US-3.2": "Tool donations with a wish list. I offer a tool I no longer need to the shared shed, and the coordinator accepts it into the catalogue, so that others can borrow it. I also see a wish list of tools the shed is short of, ranked by how often people asked for them.",
+              "US-2.1": "Donate a tool to the shed. I offer a tool I no longer need to the shared shed, and the coordinator accepts it into the catalogue, so that others can borrow it."
+            },
+            "decisive_value": 0.61,
+            "snapshot_sha256": "3b5548c842558dc7dc5d08e0a24926e8eba913ae44fb748e01163c8d190cc294"
+          }
+        },
+        {
+          "key": "merge:US-7.1>US-8.1",
+          "before": null,
+          "after": {
+            "key": "merge:US-7.1>US-8.1",
+            "kind": "merge",
+            "target": "US-7.1",
+            "stories": [
+              "US-7.1",
+              "US-8.1"
+            ],
+            "action": "accept",
+            "note": "",
+            "text_hashes": {
+              "US-7.1": "8847a3bacbb078c35431f967cd20b6e18ab6d4b6d6f4064453b713384bfa6b98",
+              "US-8.1": "c65d4a84779b14204e84bfc1a383e5ebf828b28bfc1852b4a78e1b03a912f019"
+            },
+            "titles": {
+              "US-7.1": "Pay annual plot rent",
+              "US-8.1": "Settle the allotment fee online"
+            },
+            "run": "mini~20260101-090000",
+            "decided_at": "2026-01-01T10:00:00+00:00",
+            "texts": {
+              "US-7.1": "Pay annual plot rent. I pay my yearly plot rent by card in the app, so that I don't have to post a cheque to the council.\n- Rent is due on 1 October and the app shows the amount from September.",
+              "US-8.1": "Settle the allotment fee online. I clear the annual charge for my allotment online from my phone, so that I'm not mailing paper payments to the local authority.\n- The charge falls due each October the first and appears from the start of September."
+            },
+            "decisive_value": 0.69,
+            "snapshot_sha256": "3b5548c842558dc7dc5d08e0a24926e8eba913ae44fb748e01163c8d190cc294"
+          }
+        },
+        {
+          "key": "overlap:US-1.2+US-4.3",
+          "before": null,
+          "after": {
+            "key": "overlap:US-1.2+US-4.3",
+            "kind": "overlap",
+            "target": "C8",
+            "stories": [
+              "US-1.2",
+              "US-4.3"
+            ],
+            "action": "reject",
+            "note": "Different flows; keep both.",
+            "text_hashes": {
+              "US-1.2": "247345e6fe5a04f97565dcb19f8caf4836875e733675db4440eea8c4625a55e4",
+              "US-4.3": "b97c2635d8ca5ef01c8374fd6d9eed51ab6a9c4f5448052f2580088f6075f563"
+            },
+            "titles": {
+              "US-1.2": "Accept or decline a plot offer",
+              "US-4.3": "Borrow from the seed library"
+            },
+            "run": "mini~20260101-090000",
+            "decided_at": "2026-01-01T10:00:00+00:00",
+            "texts": {
+              "US-1.2": "Accept or decline a plot offer. I get an offer when a plot comes free and I'm next in line, and I accept or decline it within fourteen days, so that plots don't sit empty.\n- The offer shows the plot size, a photo and the annual rent.\n- If I don't answer in fourteen days, the offer goes to the next person.\n- Declining twice moves me to the bottom of that list.",
+              "US-4.3": "Borrow from the seed library. I borrow seed packets from the site seed library and return saved seed from my own crop at the end of the season, so that the library keeps itself stocked.\n- Each variety shows germination notes from past borrowers.\n- I can take up to five packets at a time."
+            },
+            "decisive_value": 0.815,
+            "snapshot_sha256": "3b5548c842558dc7dc5d08e0a24926e8eba913ae44fb748e01163c8d190cc294"
+          }
+        },
+        {
+          "key": "merge:US-7.2>US-8.3",
+          "before": null,
+          "after": {
+            "key": "merge:US-7.2>US-8.3",
+            "kind": "merge",
+            "target": "US-7.2",
+            "stories": [
+              "US-7.2",
+              "US-8.3"
+            ],
+            "action": "defer",
+            "note": "Check the concession wording first.",
+            "text_hashes": {
+              "US-7.2": "0d3ba41f488409d3b12e9f28d3fcb7f4d833160743917402b2520c8da9cc0c24",
+              "US-8.3": "7ce099606a9aef854622a7eee1ba5232dabf3d7215483733abed28ebce2915d9"
+            },
+            "titles": {
+              "US-7.2": "Apply for a concession rate",
+              "US-8.3": "Request the reduced fee"
+            },
+            "run": "mini~20260101-090000",
+            "decided_at": "2026-01-01T10:00:00+00:00",
+            "texts": {
+              "US-7.2": "Apply for a concession rate. I apply for the half-price concession by uploading proof of pension or benefits, so that I pay what I can afford.\n- The treasurer approves or rejects each application.\n- Approval lasts one year and must be renewed.",
+              "US-8.3": "Request the reduced fee. I send in evidence of retirement income or welfare support and ask for the 50% discount, so that the cost stays within my means.\n- Each request is signed off or turned down by the committee's finance officer.\n- A granted discount runs for twelve months, then I reapply."
+            },
+            "decisive_value": 0.75,
+            "snapshot_sha256": "3b5548c842558dc7dc5d08e0a24926e8eba913ae44fb748e01163c8d190cc294"
+          }
+        },
+        {
+          "key": "overlap:US-1.3+US-2.2",
+          "before": null,
+          "after": {
+            "key": "overlap:US-1.3+US-2.2",
+            "kind": "overlap",
+            "target": "C7",
+            "stories": [
+              "US-1.3",
+              "US-2.2"
+            ],
+            "action": "accept",
+            "note": "",
+            "text_hashes": {
+              "US-1.3": "2da6d6c83704195ca697e121d39ae7e3ce383957657aa5e40fe92a51eb7bc630",
+              "US-2.2": "0edb596910decd1b3ac971a67c7d5dff41e667ae157c98c5dd8c8504ca94966d"
+            },
+            "titles": {
+              "US-1.3": "Split a full plot into halves",
+              "US-2.2": "Check a tool back in"
+            },
+            "run": "mini~20260101-090000",
+            "decided_at": "2026-01-01T10:00:00+00:00",
+            "texts": {
+              "US-1.3": "Split a full plot into halves. I split a full-size plot into two half plots with their own numbers as site coordinator, so that more people on the list can start growing sooner.",
+              "US-2.2": "Check a tool back in. I check a tool back in by scanning the QR tag on it, so that the next borrower can see it's back on the hook.\n- If I haven't checked in an hour after my slot ends, the coordinator gets an alert.\n- Fuel level is recorded for petrol tools."
+            },
+            "decisive_value": 0.83,
+            "snapshot_sha256": "3b5548c842558dc7dc5d08e0a24926e8eba913ae44fb748e01163c8d190cc294"
+          }
+        }
+      ]
+    }
+  ]
+}

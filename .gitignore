@@ -1,0 +1,42 @@
+# secrets
+.env
+.env.*
+!.env.example
+
+# run outputs and caches
+/runs/
+.cache/
+cache/
+*.sqlite
+*.sqlite3
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+.coverage
+htmlcov/
+
+# os / editors
+.DS_Store
+.idea/
+.vscode/
+
+# web UI state (decisions, jobs, exports)
+.tesselint/
+web/node_modules/
+web/e2e/.state/
+web/test-results/
+web/playwright-report/
+web/blob-report/
+web/.vite/
+/node_modules/
+
+# private material kept out of the public tree (real backlog, raw probe answers, process notes)
+/private/

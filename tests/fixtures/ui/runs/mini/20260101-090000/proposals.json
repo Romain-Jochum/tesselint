@@ -1,0 +1,848 @@
+{
+  "thresholds": {
+    "swap_gate": 0.2,
+    "merge": 0.5,
+    "cluster": 0.7,
+    "split": 0.8,
+    "split_corroborated": 0.7,
+    "related": 0.4,
+    "min_words_atomic": 8,
+    "borderline": 0.1
+  },
+  "proposals": [
+    {
+      "id": "M1",
+      "kind": "merge",
+      "target": "US-6.2",
+      "stories": [
+        "US-6.2",
+        "US-6.3"
+      ],
+      "decisive_value": 0.925,
+      "borderline": false,
+      "evidence": [
+        "containment",
+        "keep US-6.2 \"Suggest a work party job and Report rats at the compost\" (bundled 0.87) \u00b7 drop US-6.3 \"Sign up for a work party\" (bundled 0.43)",
+        "fwd A\u2283B 0.96 / partial 0.03 \u00b7 swap A\u2283B 0.89 / same-area 0.06 \u00b7 o 0.96 \u00b7 keep in C1 \u00b7 cos 0.37",
+        "also related: US-6.2 \u2283 US-4.2 (o 0.98) \u00b7 US-6.2 \u2283 US-5.1 (o 0.94) \u00b7 US-3.2 ~ US-6.2 (o 0.56) \u00b7 US-6.2 ~ US-8.3 (o 0.52)",
+        "\u26a0 conflicts with S1"
+      ],
+      "key": "merge:US-6.2>US-6.3",
+      "details": {
+        "relation": "containment",
+        "keep": "US-6.2",
+        "drop": "US-6.3",
+        "m": 0.925,
+        "o": 0.965,
+        "fwd": {
+          "duplicate": 0.0,
+          "A_contains_B": 0.96,
+          "B_contains_A": 0.0,
+          "partial_overlap": 0.03,
+          "same_area_distinct": 0.0,
+          "unrelated": 0.0
+        },
+        "swap": {
+          "duplicate": 0.0,
+          "A_contains_B": 0.89,
+          "B_contains_A": 0.0,
+          "partial_overlap": 0.05,
+          "same_area_distinct": 0.06,
+          "unrelated": 0.0
+        },
+        "cluster_keep": "C1",
+        "cluster_drop": null,
+        "cos": 0.3691,
+        "atomic_keep": 0.87,
+        "atomic_drop": 0.43,
+        "related": [
+          {
+            "a": "US-4.2",
+            "b": "US-6.2",
+            "overlap": 0.985,
+            "merge": 0.92,
+            "relation": "B_contains_A"
+          },
+          {
+            "a": "US-5.1",
+            "b": "US-6.2",
+            "overlap": 0.935,
+            "merge": 0.9,
+            "relation": "B_contains_A"
+          },
+          {
+            "a": "US-3.2",
+            "b": "US-6.2",
+            "overlap": 0.555,
+            "merge": 0.215,
+            "relation": "unrelated"
+          },
+          {
+            "a": "US-6.2",
+            "b": "US-8.3",
+            "overlap": 0.52,
+            "merge": 0.1,
+            "relation": "partial_overlap"
+          }
+        ],
+        "alternatives": []
+      }
+    },
+    {
+      "id": "M2",
+      "kind": "merge",
+      "target": "US-6.2",
+      "stories": [
+        "US-6.2",
+        "US-4.2"
+      ],
+      "decisive_value": 0.92,
+      "borderline": false,
+      "evidence": [
+        "containment",
+        "keep US-6.2 \"Suggest a work party job and Report rats at the compost\" (bundled 0.87) \u00b7 drop US-4.2 \"Post surplus produce\" (bundled 0.52)",
+        "fwd B\u2283A 0.91 / partial 0.09 \u00b7 swap B\u2283A 0.93 / partial 0.04 \u00b7 o 0.98 \u00b7 C1 \u00b7 cos 0.13",
+        "also related: US-6.2 \u2283 US-6.3 (o 0.96) \u00b7 US-6.2 \u2283 US-5.1 (o 0.94) \u00b7 US-3.2 ~ US-6.2 (o 0.56) \u00b7 US-6.2 ~ US-8.3 (o 0.52) \u00b7 US-4.2 ~ US-6.1 (o 0.41)",
+        "\u26a0 conflicts with S1"
+      ],
+      "key": "merge:US-6.2>US-4.2",
+      "details": {
+        "relation": "containment",
+        "keep": "US-6.2",
+        "drop": "US-4.2",
+        "m": 0.92,
+        "o": 0.985,
+        "fwd": {
+          "duplicate": 0.0,
+          "A_contains_B": 0.0,
+          "B_contains_A": 0.91,
+          "partial_overlap": 0.09,
+          "same_area_distinct": 0.0,
+          "unrelated": 0.0
+        },
+        "swap": {
+          "duplicate": 0.0,
+          "A_contains_B": 0.0,
+          "B_contains_A": 0.93,
+          "partial_overlap": 0.04,
+          "same_area_distinct": 0.02,
+          "unrelated": 0.0
+        },
+        "cluster_keep": "C1",
+        "cluster_drop": "C1",
+        "cos": 0.1347,
+        "atomic_keep": 0.87,
+        "atomic_drop": 0.52,
+        "related": [
+          {
+            "a": "US-6.2",
+            "b": "US-6.3",
+            "overlap": 0.965,
+            "merge": 0.925,
+            "relation": "A_contains_B"
+          },
+          {
+            "a": "US-5.1",
+            "b": "US-6.2",
+            "overlap": 0.935,
+            "merge": 0.9,
+            "relation": "B_contains_A"
+          },
+          {
+            "a": "US-3.2",
+            "b": "US-6.2",
+            "overlap": 0.555,
+            "merge": 0.215,
+            "relation": "unrelated"
+          },
+          {
+            "a": "US-6.2",
+            "b": "US-8.3",
+            "overlap": 0.52,
+            "merge": 0.1,
+            "relation": "partial_overlap"
+          },
+          {
+            "a": "US-4.2",
+            "b": "US-6.1",
+            "overlap": 0.41,
+            "merge": 0.155,
+            "relation": "unrelated"
+          }
+        ],
+        "alternatives": []
+      }
+    },
+    {
+      "id": "M3",
+      "kind": "merge",
+      "target": "US-6.2",
+      "stories": [
+        "US-6.2",
+        "US-5.1"
+      ],
+      "decisive_value": 0.9,
+      "borderline": false,
+      "evidence": [
+        "containment",
+        "keep US-6.2 \"Suggest a work party job and Report rats at the compost\" (bundled 0.87) \u00b7 drop US-5.1 \"Book a green waste skip slot\" (bundled 0.22)",
+        "fwd B\u2283A 0.93 / same-area 0.04 \u00b7 swap B\u2283A 0.87 / same-area 0.09 \u00b7 o 0.94 \u00b7 keep in C1 \u00b7 cos 0.18",
+        "also related: US-6.2 \u2283 US-4.2 (o 0.98) \u00b7 US-6.2 \u2283 US-6.3 (o 0.96) \u00b7 US-3.2 ~ US-6.2 (o 0.56) \u00b7 US-6.2 ~ US-8.3 (o 0.52) \u00b7 US-2.1 ~ US-5.1 (o 0.49)",
+        "\u26a0 conflicts with S1"
+      ],
+      "key": "merge:US-6.2>US-5.1",
+      "details": {
+        "relation": "containment",
+        "keep": "US-6.2",
+        "drop": "US-5.1",
+        "m": 0.9,
+        "o": 0.935,
+        "fwd": {
+          "duplicate": 0.0,
+          "A_contains_B": 0.0,
+          "B_contains_A": 0.93,
+          "partial_overlap": 0.03,
+          "same_area_distinct": 0.04,
+          "unrelated": 0.0
+        },
+        "swap": {
+          "duplicate": 0.0,
+          "A_contains_B": 0.0,
+          "B_contains_A": 0.87,
+          "partial_overlap": 0.04,
+          "same_area_distinct": 0.09,
+          "unrelated": 0.0
+        },
+        "cluster_keep": "C1",
+        "cluster_drop": null,
+        "cos": 0.1758,
+        "atomic_keep": 0.87,
+        "atomic_drop": 0.22,
+        "related": [
+          {
+            "a": "US-4.2",
+            "b": "US-6.2",
+            "overlap": 0.985,
+            "merge": 0.92,
+            "relation": "B_contains_A"
+          },
+          {
+            "a": "US-6.2",
+            "b": "US-6.3",
+            "overlap": 0.965,
+            "merge": 0.925,
+            "relation": "A_contains_B"
+          },
+          {
+            "a": "US-3.2",
+            "b": "US-6.2",
+            "overlap": 0.555,
+            "merge": 0.215,
+            "relation": "unrelated"
+          },
+          {
+            "a": "US-6.2",
+            "b": "US-8.3",
+            "overlap": 0.52,
+            "merge": 0.1,
+            "relation": "partial_overlap"
+          },
+          {
+            "a": "US-2.1",
+            "b": "US-5.1",
+            "overlap": 0.49,
+            "merge": 0.1,
+            "relation": "partial_overlap"
+          }
+        ],
+        "alternatives": []
+      }
+    },
+    {
+      "id": "M4",
+      "kind": "merge",
+      "target": "US-4.1",
+      "stories": [
+        "US-4.1",
+        "US-3.1"
+      ],
+      "decisive_value": 0.89,
+      "borderline": false,
+      "evidence": [
+        "containment",
+        "keep US-4.1 \"Water use with a seasonal allowance\" (bundled 0.55) \u00b7 drop US-3.1 \"See my plot's water use\" (bundled 0.27)",
+        "fwd B\u2283A 0.93 / same-area 0.05 \u00b7 swap B\u2283A 0.85 / partial 0.14 \u00b7 o 0.97 \u00b7 C2 \u00b7 cos 0.83",
+        "also related: US-3.4 \u2283 US-3.1 (o 0.94) \u00b7 US-4.1 ~ US-6.1 (o 0.56)"
+      ],
+      "key": "merge:US-4.1>US-3.1",
+      "details": {
+        "relation": "containment",
+        "keep": "US-4.1",
+        "drop": "US-3.1",
+        "m": 0.89,
+        "o": 0.97,
+        "fwd": {
+          "duplicate": 0.0,
+          "A_contains_B": 0.0,
+          "B_contains_A": 0.93,
+          "partial_overlap": 0.02,
+          "same_area_distinct": 0.05,
+          "unrelated": 0.0
+        },
+        "swap": {
+          "duplicate": 0.0,
+          "A_contains_B": 0.0,
+          "B_contains_A": 0.85,
+          "partial_overlap": 0.14,
+          "same_area_distinct": 0.01,
+          "unrelated": 0.0
+        },
+        "cluster_keep": "C2",
+        "cluster_drop": "C2",
+        "cos": 0.8333,
+        "atomic_keep": 0.55,
+        "atomic_drop": 0.27,
+        "related": [
+          {
+            "a": "US-3.1",
+            "b": "US-3.4",
+            "overlap": 0.945,
+            "merge": 0.745,
+            "relation": "B_contains_A"
+          },
+          {
+            "a": "US-4.1",
+            "b": "US-6.1",
+            "overlap": 0.555,
+            "merge": 0.245,
+            "relation": "unrelated"
+          }
+        ],
+        "alternatives": [
+          "US-3.4"
+        ]
+      }
+    },
+    {
+      "id": "M5",
+      "kind": "merge",
+      "target": "US-7.3",
+      "stories": [
+        "US-7.3",
+        "US-6.1"
+      ],
+      "decisive_value": 0.79,
+      "borderline": false,
+      "evidence": [
+        "containment",
+        "keep US-7.3 \"Volunteer hours shared across a joint tenancy\" (bundled 0.12) \u00b7 drop US-6.1 \"Track my volunteer hours\" (bundled 0.44)",
+        "fwd B\u2283A 0.84 / same-area 0.15 \u00b7 swap B\u2283A 0.74 / same-area 0.14 \u00b7 o 0.85 \u00b7 C6 \u00b7 cos 0.86",
+        "also related: US-4.1 ~ US-6.1 (o 0.56) \u00b7 US-4.2 ~ US-6.1 (o 0.41)"
+      ],
+      "key": "merge:US-7.3>US-6.1",
+      "details": {
+        "relation": "containment",
+        "keep": "US-7.3",
+        "drop": "US-6.1",
+        "m": 0.79,
+        "o": 0.855,
+        "fwd": {
+          "duplicate": 0.0,
+          "A_contains_B": 0.0,
+          "B_contains_A": 0.84,
+          "partial_overlap": 0.01,
+          "same_area_distinct": 0.15,
+          "unrelated": 0.0
+        },
+        "swap": {
+          "duplicate": 0.0,
+          "A_contains_B": 0.0,
+          "B_contains_A": 0.74,
+          "partial_overlap": 0.12,
+          "same_area_distinct": 0.14,
+          "unrelated": 0.0
+        },
+        "cluster_keep": "C6",
+        "cluster_drop": "C6",
+        "cos": 0.8577,
+        "atomic_keep": 0.12,
+        "atomic_drop": 0.44,
+        "related": [
+          {
+            "a": "US-4.1",
+            "b": "US-6.1",
+            "overlap": 0.555,
+            "merge": 0.245,
+            "relation": "unrelated"
+          },
+          {
+            "a": "US-4.2",
+            "b": "US-6.1",
+            "overlap": 0.41,
+            "merge": 0.155,
+            "relation": "unrelated"
+          }
+        ],
+        "alternatives": []
+      }
+    },
+    {
+      "id": "M6",
+      "kind": "merge",
+      "target": "US-7.2",
+      "stories": [
+        "US-7.2",
+        "US-8.3"
+      ],
+      "decisive_value": 0.75,
+      "borderline": false,
+      "evidence": [
+        "duplicate",
+        "keep US-7.2 \"Apply for a concession rate\" (bundled 0.05) \u00b7 drop US-8.3 \"Request the reduced fee\" (bundled 0.01)",
+        "fwd dup 0.79 / same-area 0.18 \u00b7 swap dup 0.71 / partial 0.20 \u00b7 o 0.86 \u00b7 C5 \u00b7 cos 0.52",
+        "also related: US-6.2 ~ US-8.3 (o 0.52)"
+      ],
+      "key": "merge:US-7.2>US-8.3",
+      "details": {
+        "relation": "duplicate",
+        "keep": "US-7.2",
+        "drop": "US-8.3",
+        "m": 0.75,
+        "o": 0.865,
+        "fwd": {
+          "duplicate": 0.79,
+          "A_contains_B": 0.0,
+          "B_contains_A": 0.0,
+          "partial_overlap": 0.03,
+          "same_area_distinct": 0.18,
+          "unrelated": 0.0
+        },
+        "swap": {
+          "duplicate": 0.71,
+          "A_contains_B": 0.0,
+          "B_contains_A": 0.0,
+          "partial_overlap": 0.2,
+          "same_area_distinct": 0.1,
+          "unrelated": 0.0
+        },
+        "cluster_keep": "C5",
+        "cluster_drop": "C5",
+        "cos": 0.5214,
+        "atomic_keep": 0.05,
+        "atomic_drop": 0.01,
+        "related": [
+          {
+            "a": "US-6.2",
+            "b": "US-8.3",
+            "overlap": 0.52,
+            "merge": 0.1,
+            "relation": "partial_overlap"
+          }
+        ],
+        "alternatives": []
+      }
+    },
+    {
+      "id": "M7",
+      "kind": "merge",
+      "target": "US-3.4",
+      "stories": [
+        "US-3.4",
+        "US-3.1"
+      ],
+      "decisive_value": 0.745,
+      "borderline": false,
+      "evidence": [
+        "containment",
+        "keep US-3.4 \"Check water tank levels\" (bundled 0.43) \u00b7 drop US-3.1 \"See my plot's water use\" (bundled 0.27)",
+        "fwd B\u2283A 0.70 / partial 0.23 \u00b7 swap B\u2283A 0.79 / partial 0.17 \u00b7 o 0.94 \u00b7 drop in C2 \u00b7 cos 0.22",
+        "also related: US-4.1 \u2283 US-3.1 (o 0.97)",
+        "\u26a0 conflicts with M4"
+      ],
+      "key": "merge:US-3.4>US-3.1",
+      "details": {
+        "relation": "containment",
+        "keep": "US-3.4",
+        "drop": "US-3.1",
+        "m": 0.745,
+        "o": 0.945,
+        "fwd": {
+          "duplicate": 0.0,
+          "A_contains_B": 0.0,
+          "B_contains_A": 0.7,
+          "partial_overlap": 0.23,
+          "same_area_distinct": 0.07,
+          "unrelated": 0.0
+        },
+        "swap": {
+          "duplicate": 0.0,
+          "A_contains_B": 0.0,
+          "B_contains_A": 0.79,
+          "partial_overlap": 0.17,
+          "same_area_distinct": 0.04,
+          "unrelated": 0.0
+        },
+        "cluster_keep": null,
+        "cluster_drop": "C2",
+        "cos": 0.2164,
+        "atomic_keep": 0.43,
+        "atomic_drop": 0.27,
+        "related": [
+          {
+            "a": "US-3.1",
+            "b": "US-4.1",
+            "overlap": 0.97,
+            "merge": 0.89,
+            "relation": "B_contains_A"
+          }
+        ],
+        "alternatives": [
+          "US-4.1"
+        ]
+      }
+    },
+    {
+      "id": "M8",
+      "kind": "merge",
+      "target": "US-7.1",
+      "stories": [
+        "US-7.1",
+        "US-8.1"
+      ],
+      "decisive_value": 0.69,
+      "borderline": false,
+      "evidence": [
+        "duplicate",
+        "keep US-7.1 \"Pay annual plot rent\" (bundled 0.12) \u00b7 drop US-8.1 \"Settle the allotment fee online\" (bundled 0.28)",
+        "fwd dup 0.63 / partial 0.25 \u00b7 swap dup 0.75 / partial 0.24 \u00b7 o 0.94 \u00b7 C3 \u00b7 cos 0.30"
+      ],
+      "key": "merge:US-7.1>US-8.1",
+      "details": {
+        "relation": "duplicate",
+        "keep": "US-7.1",
+        "drop": "US-8.1",
+        "m": 0.69,
+        "o": 0.935,
+        "fwd": {
+          "duplicate": 0.63,
+          "A_contains_B": 0.0,
+          "B_contains_A": 0.0,
+          "partial_overlap": 0.25,
+          "same_area_distinct": 0.11,
+          "unrelated": 0.0
+        },
+        "swap": {
+          "duplicate": 0.75,
+          "A_contains_B": 0.0,
+          "B_contains_A": 0.0,
+          "partial_overlap": 0.24,
+          "same_area_distinct": 0.01,
+          "unrelated": 0.0
+        },
+        "cluster_keep": "C3",
+        "cluster_drop": "C3",
+        "cos": 0.2979,
+        "atomic_keep": 0.12,
+        "atomic_drop": 0.28,
+        "related": [],
+        "alternatives": []
+      }
+    },
+    {
+      "id": "M9",
+      "kind": "merge",
+      "target": "US-3.2",
+      "stories": [
+        "US-3.2",
+        "US-2.1"
+      ],
+      "decisive_value": 0.61,
+      "borderline": false,
+      "evidence": [
+        "containment",
+        "keep US-3.2 \"Tool donations with a wish list\" (bundled 0.07) \u00b7 drop US-2.1 \"Donate a tool to the shed\" (bundled 0.16)",
+        "fwd B\u2283A 0.62 / same-area 0.21 \u00b7 swap B\u2283A 0.60 / same-area 0.32 \u00b7 o 0.73 \u00b7 C10 \u00b7 cos 0.81",
+        "also related: US-3.2 ~ US-6.2 (o 0.56) \u00b7 US-2.1 ~ US-5.1 (o 0.49)"
+      ],
+      "key": "merge:US-3.2>US-2.1",
+      "details": {
+        "relation": "containment",
+        "keep": "US-3.2",
+        "drop": "US-2.1",
+        "m": 0.61,
+        "o": 0.735,
+        "fwd": {
+          "duplicate": 0.0,
+          "A_contains_B": 0.0,
+          "B_contains_A": 0.62,
+          "partial_overlap": 0.17,
+          "same_area_distinct": 0.21,
+          "unrelated": 0.0
+        },
+        "swap": {
+          "duplicate": 0.0,
+          "A_contains_B": 0.0,
+          "B_contains_A": 0.6,
+          "partial_overlap": 0.08,
+          "same_area_distinct": 0.32,
+          "unrelated": 0.0
+        },
+        "cluster_keep": "C10",
+        "cluster_drop": "C10",
+        "cos": 0.808,
+        "atomic_keep": 0.07,
+        "atomic_drop": 0.16,
+        "related": [
+          {
+            "a": "US-3.2",
+            "b": "US-6.2",
+            "overlap": 0.555,
+            "merge": 0.215,
+            "relation": "unrelated"
+          },
+          {
+            "a": "US-2.1",
+            "b": "US-5.1",
+            "overlap": 0.49,
+            "merge": 0.1,
+            "relation": "partial_overlap"
+          }
+        ],
+        "alternatives": []
+      }
+    },
+    {
+      "id": "M10",
+      "kind": "merge",
+      "target": "US-1.1",
+      "stories": [
+        "US-1.1",
+        "US-8.2"
+      ],
+      "decisive_value": 0.59,
+      "borderline": true,
+      "evidence": [
+        "duplicate",
+        "keep US-1.1 \"Rate allotments on a grounds round\" (bundled 0.40) \u00b7 drop US-8.2 \"Record a plot inspection\" (bundled 0.09)",
+        "fwd dup 0.60 / same-area 0.24 \u00b7 swap dup 0.58 / partial 0.28 \u00b7 o 0.81 \u00b7 C9 \u00b7 cos 0.33"
+      ],
+      "key": "merge:US-1.1>US-8.2",
+      "details": {
+        "relation": "duplicate",
+        "keep": "US-1.1",
+        "drop": "US-8.2",
+        "m": 0.59,
+        "o": 0.81,
+        "fwd": {
+          "duplicate": 0.6,
+          "A_contains_B": 0.0,
+          "B_contains_A": 0.0,
+          "partial_overlap": 0.16,
+          "same_area_distinct": 0.24,
+          "unrelated": 0.0
+        },
+        "swap": {
+          "duplicate": 0.58,
+          "A_contains_B": 0.0,
+          "B_contains_A": 0.0,
+          "partial_overlap": 0.28,
+          "same_area_distinct": 0.15,
+          "unrelated": 0.0
+        },
+        "cluster_keep": "C9",
+        "cluster_drop": "C9",
+        "cos": 0.3327,
+        "atomic_keep": 0.4,
+        "atomic_drop": 0.09,
+        "related": [],
+        "alternatives": []
+      }
+    },
+    {
+      "id": "M11",
+      "kind": "merge",
+      "target": "US-8.99",
+      "stories": [
+        "US-8.99",
+        "US-7.5"
+      ],
+      "decisive_value": 0.56,
+      "borderline": true,
+      "evidence": [
+        "duplicate",
+        "keep US-8.99 \"Pay a refundable plot deposit\" (bundled 0.11) \u00b7 drop US-7.5 \"Renew by direct debit\" (bundled 0.28)",
+        "fwd dup 0.56 / partial 0.38 \u00b7 swap dup 0.56 / partial 0.34 \u00b7 o 0.92 \u00b7 C4 \u00b7 cos 0.34",
+        "also related: US-1.2 ~ US-8.99 (o 0.41)"
+      ],
+      "key": "merge:US-8.99>US-7.5",
+      "details": {
+        "relation": "duplicate",
+        "keep": "US-8.99",
+        "drop": "US-7.5",
+        "m": 0.56,
+        "o": 0.92,
+        "fwd": {
+          "duplicate": 0.56,
+          "A_contains_B": 0.0,
+          "B_contains_A": 0.0,
+          "partial_overlap": 0.38,
+          "same_area_distinct": 0.06,
+          "unrelated": 0.0
+        },
+        "swap": {
+          "duplicate": 0.56,
+          "A_contains_B": 0.0,
+          "B_contains_A": 0.0,
+          "partial_overlap": 0.34,
+          "same_area_distinct": 0.1,
+          "unrelated": 0.0
+        },
+        "cluster_keep": "C4",
+        "cluster_drop": "C4",
+        "cos": 0.3363,
+        "atomic_keep": 0.11,
+        "atomic_drop": 0.28,
+        "related": [
+          {
+            "a": "US-1.2",
+            "b": "US-8.99",
+            "overlap": 0.405,
+            "merge": 0.15,
+            "relation": "unrelated"
+          }
+        ],
+        "alternatives": []
+      }
+    },
+    {
+      "id": "O1",
+      "kind": "overlap",
+      "target": "C7",
+      "stories": [
+        "US-1.3",
+        "US-2.2"
+      ],
+      "decisive_value": 0.83,
+      "borderline": false,
+      "evidence": [
+        "US-1.3 \"Split a full plot into halves\" \u00b7 US-2.2 \"Check a tool back in\"",
+        "edges: US-1.3 ~ US-2.2 (o 0.83)"
+      ],
+      "key": "overlap:US-1.3+US-2.2",
+      "details": {
+        "cluster": "C7",
+        "members": [
+          "US-1.3",
+          "US-2.2"
+        ],
+        "mean_o": 0.83,
+        "edges": [
+          {
+            "a": "US-1.3",
+            "b": "US-2.2",
+            "overlap": 0.83,
+            "merge": 0.0,
+            "relation": "partial_overlap"
+          }
+        ],
+        "related": []
+      }
+    },
+    {
+      "id": "O2",
+      "kind": "overlap",
+      "target": "C8",
+      "stories": [
+        "US-1.2",
+        "US-4.3"
+      ],
+      "decisive_value": 0.815,
+      "borderline": false,
+      "evidence": [
+        "US-1.2 \"Accept or decline a plot offer\" \u00b7 US-4.3 \"Borrow from the seed library\"",
+        "edges: US-1.2 ~ US-4.3 (o 0.81)",
+        "also related: US-1.2 ~ US-8.99 (o 0.41)"
+      ],
+      "key": "overlap:US-1.2+US-4.3",
+      "details": {
+        "cluster": "C8",
+        "members": [
+          "US-1.2",
+          "US-4.3"
+        ],
+        "mean_o": 0.815,
+        "edges": [
+          {
+            "a": "US-1.2",
+            "b": "US-4.3",
+            "overlap": 0.815,
+            "merge": 0.0,
+            "relation": "partial_overlap"
+          }
+        ],
+        "related": [
+          {
+            "a": "US-1.2",
+            "b": "US-8.99",
+            "overlap": 0.405,
+            "merge": 0.15,
+            "relation": "unrelated"
+          }
+        ]
+      }
+    },
+    {
+      "id": "S1",
+      "kind": "split",
+      "target": null,
+      "stories": [
+        "US-6.2"
+      ],
+      "decisive_value": 0.87,
+      "borderline": true,
+      "evidence": [
+        "US-6.2 \"Suggest a work party job and Report rats at the compost\"",
+        "72 words \u00b7 3 sub-bullets \u00b7 in C1 \u00b7 tag [Lite]",
+        "\u26a0 conflicts with M1, M2, M3"
+      ],
+      "key": "split:US-6.2",
+      "details": {
+        "story": "US-6.2",
+        "bundled": 0.87,
+        "words": 72,
+        "n_subs": 3,
+        "cluster": "C1",
+        "reaches": [],
+        "keeps": [
+          "US-6.3",
+          "US-4.2",
+          "US-5.1"
+        ]
+      }
+    },
+    {
+      "id": "S2",
+      "kind": "split",
+      "target": null,
+      "stories": [
+        "US-3.3"
+      ],
+      "decisive_value": 0.83,
+      "borderline": true,
+      "evidence": [
+        "US-3.3 \"Join a watering rota and Unpaid rent reminders\"",
+        "94 words \u00b7 4 sub-bullets \u00b7 tag [MVP+]"
+      ],
+      "key": "split:US-3.3",
+      "details": {
+        "story": "US-3.3",
+        "bundled": 0.83,
+        "words": 94,
+        "n_subs": 4,
+        "cluster": null,
+        "reaches": [],
+        "keeps": []
+      }
+    }
+  ]
+}

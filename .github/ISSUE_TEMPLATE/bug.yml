@@ -1,0 +1,57 @@
+name: Bug report
+description: Something in the CLI or the review UI does not work as documented.
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please don't paste confidential backlog text, run outputs or your API key here: this issue is public. Describe the stories in general terms, or reproduce the bug on `tests/fixtures/sample_backlog.md` or a `tesselint synth` set. Report security problems privately instead (see SECURITY.md).
+  - type: input
+    id: command
+    attributes:
+      label: Command
+      description: The exact command you ran, with its flags.
+      placeholder: tesselint run --source backlog.md --dry-run
+    validations:
+      required: true
+  - type: input
+    id: exit-code
+    attributes:
+      label: Exit code
+      description: Run `echo $?` right after the command.
+      placeholder: "4"
+    validations:
+      required: true
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened, and what did you expect?
+    validations:
+      required: true
+  - type: textarea
+    id: debug
+    attributes:
+      label: Output with --debug
+      description: Run the command again with `--debug` (for example `tesselint --debug run …`) and paste stderr. Remove any story text first.
+      render: shell
+  - type: input
+    id: version
+    attributes:
+      label: Version
+      description: The output of `tesselint --version`, or the commit you run from.
+      placeholder: tesselint 0.1.0
+    validations:
+      required: true
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Operating system, Python version and, for UI bugs, the browser.
+      placeholder: macOS 15, Python 3.12.8, Chrome 141
+  - type: checkboxes
+    id: confidential
+    attributes:
+      label: Confidential text
+      options:
+        - label: This report contains no confidential backlog text and no API key.
+          required: true

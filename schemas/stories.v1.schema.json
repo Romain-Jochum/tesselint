@@ -1,0 +1,129 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tesselint.invalid/schemas/stories.v1.schema.json",
+  "title": "TesseLint stories v1",
+  "description": "Canonical tesselint input (docs/input/INPUT.md). Text fields hold the source's words verbatim; the Jev text is derived from them by the md-clean/1 render profile. Cross-field rules (unique IDs, epic and merge targets exist, priority vocabulary) are checked by `tesselint parse --source`, not here.",
+  "type": "object",
+  "required": ["format", "version", "source", "generated_at", "epics", "stories"],
+  "properties": {
+    "$schema": { "type": "string" },
+    "format": { "const": "tesselint/stories" },
+    "version": { "const": 1 },
+    "render": {
+      "description": "How a story becomes the text sent to Jev. Only md-clean/1 (today's render.clean) exists.",
+      "const": "md-clean/1",
+      "default": "md-clean/1"
+    },
+    "source": { "$ref": "#/$defs/source" },
+    "generated_at": { "type": "string", "format": "date-time" },
+    "priorities": {
+      "description": "Optional closed vocabulary for story.priority, in rank order.",
+      "type": "array",
+      "items": { "$ref": "#/$defs/line" },
+      "uniqueItems": true
+    },
+    "epics": {
+      "description": "Epics in narrative order.",
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/epic" }
+    },
+    "stories": {
+      "description": "Stories, live and removed, in source order.",
+      "type": "array",
+      "minItems": 1,
+      "items": { "$ref": "#/$defs/story" }
+    }
+  },
+  "patternProperties": { "^x-": true },
+  "additionalProperties": false,
+  "$defs": {
+    "id": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$"
+    },
+    "line": {
+      "description": "One trimmed, non-empty line of text.",
+      "type": "string",
+      "pattern": "^\\S(?:[^\\r\\n]*\\S)?$"
+    },
+    "line_or_empty": {
+      "type": "string",
+      "pattern": "^(?:\\S(?:[^\\r\\n]*\\S)?)?$"
+    },
+    "source": {
+      "type": "object",
+      "required": ["path", "converter"],
+      "properties": {
+        "path": { "$ref": "#/$defs/line", "description": "Path or URL of the original backlog." },
+        "section": { "$ref": "#/$defs/line", "description": "Heading of the converted part, e.g. `## 4. User stories`." },
+        "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$", "description": "sha256 of the exact bytes converted." },
+        "line_offset": { "type": "integer", "minimum": 0, "description": "Lines before `section` in the file." },
+        "converter": { "$ref": "#/$defs/line", "description": "`tesselint import/<version>` or `llm:<model>`." }
+      },
+      "patternProperties": { "^x-": true },
+      "additionalProperties": false
+    },
+    "epic": {
+      "type": "object",
+      "required": ["id", "name"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "name": { "$ref": "#/$defs/line" },
+        "source_line": { "type": "integer", "minimum": 1 }
+      },
+      "patternProperties": { "^x-": true },
+      "additionalProperties": false
+    },
+    "story": {
+      "type": "object",
+      "required": ["id", "epic", "title"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "epic": { "$ref": "#/$defs/id" },
+        "title": {
+          "allOf": [
+            { "$ref": "#/$defs/line" },
+            { "not": { "pattern": "[\\[\\]]" } }
+          ],
+          "description": "Verbatim, without the tag and without a trailing period."
+        },
+        "tag": {
+          "allOf": [
+            { "$ref": "#/$defs/line" },
+            { "not": { "pattern": "[\\[\\]]" } }
+          ],
+          "description": "Verbatim tag text without brackets, qualifiers included."
+        },
+        "priority": { "$ref": "#/$defs/line", "description": "The tag's leading keyword, normalised." },
+        "statement": { "$ref": "#/$defs/line_or_empty", "description": "Verbatim core sentence; empty if the source has none." },
+        "details": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/line" },
+          "default": []
+        },
+        "status": {
+          "description": "A story without a status is live.",
+          "enum": ["live", "removed"],
+          "default": "live"
+        },
+        "merged_into": { "anyOf": [{ "$ref": "#/$defs/id" }, { "type": "null" }] },
+        "removed_reason": { "$ref": "#/$defs/line" },
+        "references": {
+          "type": "array",
+          "items": { "$ref": "#/$defs/id" },
+          "uniqueItems": true
+        },
+        "source_line": { "type": "integer", "minimum": 1 }
+      },
+      "patternProperties": { "^x-": true },
+      "additionalProperties": false,
+      "if": { "properties": { "status": { "const": "live" } } },
+      "then": {
+        "required": ["statement"],
+        "properties": { "merged_into": false, "removed_reason": false }
+      },
+      "else": { "required": ["merged_into"] }
+    }
+  }
+}

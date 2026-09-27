@@ -1,0 +1,38 @@
+name: Feature request
+description: Suggest a change to the CLI, the review UI or the input formats.
+labels: ["enhancement"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Please don't paste confidential backlog text here: this issue is public.
+  - type: textarea
+    id: problem
+    attributes:
+      label: The problem
+      description: What are you trying to do, and where does TesseLint get in the way?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What you would like
+      description: The change you have in mind. A command line, a screen or an example input helps.
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: What you tried instead
+      description: Workarounds or other tools, if any.
+  - type: dropdown
+    id: spend
+    attributes:
+      label: Does it change what a run asks Jev?
+      description: A change to the questions or the text sent to Jev voids the answer cache and the calibration, so it needs a new measurement.
+      options:
+        - "No"
+        - "Yes"
+        - Not sure
+    validations:
+      required: true

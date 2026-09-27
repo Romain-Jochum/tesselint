@@ -1,0 +1,93 @@
+/* Tokens (docs/ui/DESIGN.md §5 "Tokens (light/dark)"). The theme is <html data-theme="light|dark">
+   (src/lib/theme.ts). Status colours always travel with an icon and a label: ✓ ✗ ⏸ ⟳. */
+
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root {
+  color-scheme: light;
+  --bg: #fefefe;
+  --surface: #ffffff;
+  --surface-2: #f4f4f2;
+  --border: #e4e4e0;
+  --text: #0e0d0f;
+  --text-2: #52514e;
+  --muted: #6b6a66;
+  --accent: #10b981;
+  --accent-text: #047857;
+  --focus: #2a78d6;
+  --mark: #fff1b8;
+  --cell-missing: #d9d8d3; /* heatmap: pair not answered (value not fixed by the DESIGN) */
+
+  --status-accept: #0ca30c; /* ✓ */
+  --status-reject: #d03b3b; /* ✗ */
+  --status-defer: #fab219; /* ⏸ */
+  --status-stale: #ec835a; /* ⟳ */
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #0e0d0f;
+  --surface: #17161a;
+  --surface-2: #1f1e22;
+  --border: #2c2b30;
+  --text: #f4f4f2;
+  --text-2: #c3c2b7;
+  --muted: #9a998f;
+  --accent: #10b981;
+  --accent-text: #34d399;
+  --focus: #2a78d6;
+  --mark: #5c4a00;
+  --cell-missing: #3a393f;
+}
+
+/* Tailwind utilities over the tokens: bg-bg, bg-surface, border-border, text-text-2, bg-mark, … */
+@theme inline {
+  --color-bg: var(--bg);
+  --color-surface: var(--surface);
+  --color-surface-2: var(--surface-2);
+  --color-border: var(--border);
+  --color-text: var(--text);
+  --color-text-2: var(--text-2);
+  --color-muted: var(--muted);
+  --color-accent: var(--accent);
+  --color-accent-text: var(--accent-text);
+  --color-focus: var(--focus);
+  --color-mark: var(--mark);
+  --color-cell-missing: var(--cell-missing);
+  --color-accept: var(--status-accept);
+  --color-reject: var(--status-reject);
+  --color-defer: var(--status-defer);
+  --color-stale: var(--status-stale);
+}
+
+@layer base {
+  html,
+  body {
+    background: var(--bg);
+    color: var(--text);
+  }
+
+  /* §5 Accessibility: a 2 px focus ring. */
+  :focus-visible {
+    outline: 2px solid var(--focus);
+    outline-offset: 2px;
+  }
+
+  mark {
+    background: var(--mark);
+    color: inherit;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}

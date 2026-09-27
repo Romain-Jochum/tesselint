@@ -1,0 +1,465 @@
+# Hand-written ground-truth seeds for the tesselint synthetic generator (DESIGN.md §6).
+# Each seed is one atomic capability. `paraphrase` is a same-scope rewrite (a planted duplicate);
+# `addon` is an extra same-area capability (seed + addon = a container that contains the seed).
+version = 1
+domain = "Plotline, an app for a city allotment society that runs 14 sites: waiting lists, shared tools, water, compost, produce swaps, work parties, rent and inspections."
+
+[epics]
+E1 = "Waiting list and plot allocation"
+E2 = "Tool shed lending"
+E3 = "Water supply and irrigation"
+E4 = "Produce and seed sharing"
+E5 = "Compost and green waste"
+E6 = "Work parties and volunteering"
+E7 = "Rent, deposits and payments"
+E8 = "Site rules and inspections"
+
+# ---------------------------------------------------------------- E1
+
+[[seed]]
+id = "S01"
+epic = "E1"
+title = "Join the plot waiting list"
+tag = "MVP"
+core = "I join the waiting list for one or more garden sites from my phone, so that I get a plot without queuing at the council office."
+subs = ["I can pick up to three sites and rank them.", "Proof that I live in the borough is required; a council tax bill or tenancy agreement works."]
+paraphrase = { title = "Sign up for an allotment queue", core = "I put my name down for whichever allotment locations suit me using the mobile app, so that getting a patch doesn't mean standing in line at the town hall.", subs = ["Up to three locations may be chosen, in order of preference.", "I must show I'm a local resident, with a lease or a rates statement."] }
+
+[[seed]]
+id = "S02"
+epic = "E1"
+title = "See my place in the queue"
+tag = "MVP+"
+core = "I see my current position on each waiting list and a rough estimate of the wait, so that I can decide whether to stay or try another site."
+subs = ["The estimate is based on how many plots at that site came free over the last two years."]
+addon = { title = "Queue position and progress messages", alone_title = "Waiting list move-up messages", core = "I also get a message whenever I move up ten places or more on any list.", subs = ["I can turn these messages off."] }
+
+[[seed]]
+id = "S03"
+epic = "E1"
+title = "Accept or decline a plot offer"
+tag = "MVP"
+core = "I get an offer when a plot comes free and I'm next in line, and I accept or decline it within fourteen days, so that plots don't sit empty."
+subs = ["The offer shows the plot size, a photo and the annual rent.", "If I don't answer in fourteen days, the offer goes to the next person.", "Declining twice moves me to the bottom of that list."]
+paraphrase = { title = "Respond to a vacant allotment", core = "I'm told as soon as an allotment frees up and it's my turn, and I have two weeks to say yes or no, so that nothing stays unused while people wait.", subs = ["The notice includes the area in square metres, a picture and the yearly fee.", "Silence for two weeks passes it to whoever is behind me.", "A second refusal sends me to the back of that queue."] }
+addon = { title = "Plot offers with a site visit", alone_title = "Book a vacant plot visit", core = "I also book a time to walk round the vacant plot with the site rep before I answer.", subs = ["Booking a visit pauses the fourteen-day clock until the visit date."] }
+
+[[seed]]
+id = "S04"
+epic = "E1"
+title = "Split a full plot into halves"
+tag = "Later"
+core = "I split a full-size plot into two half plots with their own numbers as site coordinator, so that more people on the list can start growing sooner."
+subs = []
+
+[[seed]]
+id = "S05"
+epic = "E1"
+title = "Swap plots with another holder"
+tag = "Later"
+core = "I propose swapping plots with another holder on my site, and once they agree and the coordinator approves, we trade tenancies, so that I can move to sunnier ground."
+subs = ["Both holders keep their original start dates for seniority."]
+paraphrase = { title = "Exchange allotments by mutual agreement", core = "I ask another tenant at my location to trade allotments, and when they accept and the organiser signs off, the leases change hands, so that I end up on a patch with better light.", subs = ["Seniority still counts from when each of us first started renting."] }
+
+[[seed]]
+id = "S06"
+epic = "E1"
+title = "Give up my plot"
+tag = "MVP"
+core = "I give up my plot in the app, so that it's re-let."
+subs = ["I choose an end date up to three months ahead.", "The coordinator sees the date and can plan the next offer."]
+addon = { title = "Give up my plot and pass on my kit", alone_title = "Pass on my plot kit", core = "I also list the water butts, cold frames and fruit cages I'm leaving behind, so the next holder can take them over.", subs = ["The incoming holder sees the list before accepting."] }
+
+# ---------------------------------------------------------------- E2
+
+[[seed]]
+id = "S07"
+epic = "E2"
+title = "Book a shared tool"
+tag = "MVP"
+core = "I book a shared tool such as the rotavator or strimmer for a half-day slot, so that I don't have to buy equipment I use twice a year."
+subs = ["Slots run 8:00-13:00 and 13:00-18:00.", "I can hold at most two slots per week."]
+paraphrase = { title = "Reserve communal machinery", core = "I reserve the communal tiller, trimmer or similar machine for a morning or an afternoon, so that I needn't purchase kit I'd only touch a couple of times per season.", subs = ["Mornings are 8 to 1, afternoons 1 to 6.", "Each person gets two bookings a week at most."] }
+addon = { title = "Tool bookings with a waitlist", alone_title = "Tool slot waitlist", core = "I also join a queue for a tool slot that is already taken and get it automatically if the holder cancels.", subs = ["I'm told by message when a cancelled slot passes to me."] }
+
+[[seed]]
+id = "S08"
+epic = "E2"
+title = "Unlock the shed with my phone"
+tag = "MVP+"
+core = "I open the tool shed's smart lock with my phone during my booked slot, so that no one has to hand out keys."
+subs = ["The lock works only from fifteen minutes before my slot to fifteen minutes after.", "Every opening is logged with name and time."]
+paraphrase = { title = "Mobile access to the equipment store", core = "I use my mobile to release the electronic padlock on the equipment store while my reservation window is open, so that I never wait for a committee member to let me in.", subs = ["Access is valid from a quarter of an hour ahead of the booking until a quarter of an hour after it ends.", "The app records who came in and when, every time the door opens."] }
+
+[[seed]]
+id = "S09"
+epic = "E2"
+title = "Report a broken tool"
+tag = "MVP"
+core = "I report a tool as broken with a photo and a short note, so that it is taken out of booking until someone repairs it."
+subs = ["Open bookings for that tool are cancelled and the people who made them are told."]
+addon = { title = "Broken tool reports with repair tracking", alone_title = "Tool repair tracking", core = "I also follow the repair: who took it on, what part was ordered, and when it's back in the shed.", subs = ["A handy member can claim a repair and post updates."] }
+
+[[seed]]
+id = "S10"
+epic = "E2"
+title = "Check a tool back in"
+tag = "Lite"
+core = "I check a tool back in by scanning the QR tag on it, so that the next borrower can see it's back on the hook."
+subs = ["If I haven't checked in an hour after my slot ends, the coordinator gets an alert.", "Fuel level is recorded for petrol tools."]
+paraphrase = { title = "Log equipment returns", core = "I scan the printed code stuck to a machine to log its return to the store, so that the person who reserved it after me knows it's available.", subs = ["The organiser is warned when sixty minutes pass after my booking with no return logged.", "For anything that runs on petrol, I note how full the tank is."] }
+
+[[seed]]
+id = "S11"
+epic = "E2"
+title = "Donate a tool to the shed"
+tag = "Later"
+core = "I offer a tool I no longer need to the shared shed, and the coordinator accepts it into the catalogue, so that others can borrow it."
+subs = []
+addon = { title = "Tool donations with a wish list", alone_title = "Tool wish list", core = "I also see a wish list of tools the shed is short of, ranked by how often people asked for them.", subs = [] }
+
+[[seed]]
+id = "S12"
+epic = "E2"
+title = "Safety induction for power tools"
+tag = "Not now"
+core = "I watch a short safety video and pass a quiz before my first booking of any powered tool, so that the committee knows every user has seen the basics."
+subs = ["The quiz has five questions and I can retake it.", "Passing unlocks powered tools for two years."]
+
+# ---------------------------------------------------------------- E3
+
+[[seed]]
+id = "S13"
+epic = "E3"
+title = "Check water tank levels"
+tag = "MVP"
+core = "I check how full each water tank on my site is before I walk down, so that I bring cans from home when the tanks are low."
+subs = ["Levels come from float sensors and update every thirty minutes."]
+paraphrase = { title = "Know if the cisterns are empty", core = "I look up how much is left in every cistern at my allotment before leaving the house, so that I carry my own supply if they're nearly dry.", subs = ["A gauge inside each cistern reports every half hour."] }
+addon = { title = "Tank levels with low-water alerts", alone_title = "Low-water tank alerts", core = "I also get a push message when any tank on my site drops below a quarter full.", subs = [] }
+
+[[seed]]
+id = "S14"
+epic = "E3"
+title = "Hosepipe ban notice"
+tag = "MVP"
+core = "I get a notice with the start date and the rules for my site when the water company announces a hosepipe ban, so that I don't break them without knowing."
+subs = ["The notice says whether drip lines and filling cans from the tanks are still allowed.", "It stays pinned in the app until the ban lifts."]
+addon = { title = "Hosepipe ban notices with bowser days", alone_title = "Bowser refill days", core = "I also see the days when the council bowser will refill the tanks while the ban lasts.", subs = [] }
+
+[[seed]]
+id = "S15"
+epic = "E3"
+title = "See my plot's water use"
+tag = "Lite"
+core = "I see how many litres my plot used each week this season, taken from its sub-meter, so that I can tell whether mulching is actually saving water."
+subs = ["The chart compares my use with the site average for plots of the same size."]
+paraphrase = { title = "Weekly consumption from my meter", core = "I view my allotment's weekly draw from its own gauge across the growing year, so that I can judge if covering the soil with straw really cuts what I consume.", subs = ["A line shows the mean for equal-sized allotments at my location for comparison."] }
+addon = { title = "Water use with a seasonal allowance", alone_title = "Seasonal water allowance", core = "I also get a seasonal water allowance for my plot and see how much of it is left.", subs = ["The allowance scales with plot size."] }
+
+[[seed]]
+id = "S16"
+epic = "E3"
+title = "Join a watering rota"
+tag = "MVP+"
+core = "I join a watering rota with the neighbours in my row, so that our plots get watered while any of us is away."
+subs = ["Each person picks the days they cover.", "I get a reminder the evening before my turn.", "I can swap a day with someone else on the rota."]
+
+[[seed]]
+id = "S17"
+epic = "E3"
+title = "Report a leak"
+tag = "MVP"
+core = "I report a leaking tap or burst pipe by dropping a pin on the site map, so that the water can be shut off fast."
+subs = ["The on-call volunteer is phoned automatically for anything marked urgent.", "The report shows the stopcock closest to the pin."]
+paraphrase = { title = "Flag a water escape on the plan", core = "I place a marker on the allotment plan where a faucet is dripping or a main has split, so that someone can close off the supply quickly.", subs = ["Anything tagged as an emergency triggers a call to whichever helper is on duty.", "I'm shown where the nearest shut-off valve is."] }
+addon = { title = "Leak reports with a status trail", alone_title = "Leak repair status trail", core = "I also follow each leak I reported from open to fixed, with the plumber's visit date.", subs = [] }
+
+[[seed]]
+id = "S18"
+epic = "E3"
+title = "Set my drip line timer"
+tag = "Later"
+core = "I set the valve timer on my plot's drip line from the app, choosing days and minutes, so that my beds get watered at dawn without me there."
+subs = []
+
+# ---------------------------------------------------------------- E4
+
+[[seed]]
+id = "S19"
+epic = "E4"
+title = "Post surplus produce"
+tag = "MVP"
+core = "I post surplus produce with a photo, quantity and pick-up spot on the site, so that neighbours can take what I can't eat before it spoils."
+subs = ["Posts expire after three days.", "I can mark a post as gone."]
+paraphrase = { title = "Share my extra crops", core = "I list a glut from my beds with a picture, an amount and a collection point on the allotment, so that others nearby use it instead of letting it rot.", subs = ["A listing disappears on its own after 72 hours.", "Once everything is claimed I can close the listing."] }
+addon = { title = "Surplus posts with reservations", alone_title = "Produce reservations for neighbours", core = "I also let a neighbour reserve part of my post, so two people don't walk down for the same courgettes.", subs = ["A reservation lapses if not collected by sunset."] }
+
+[[seed]]
+id = "S20"
+epic = "E4"
+title = "Borrow from the seed library"
+tag = "Lite"
+core = "I borrow seed packets from the site seed library and return saved seed from my own crop at the end of the season, so that the library keeps itself stocked."
+subs = ["Each variety shows germination notes from past borrowers.", "I can take up to five packets at a time."]
+addon = { title = "Seed library with sowing reminders", alone_title = "Frost-timed sowing reminders", core = "I also get a reminder to sow each variety I borrowed, timed to the local frost dates.", subs = [] }
+
+[[seed]]
+id = "S21"
+epic = "E4"
+title = "Search surplus by crop"
+tag = "MVP+"
+core = "I search current surplus posts by crop name, so that I find rhubarb without scrolling through every listing."
+subs = ["Results can be limited to my own site."]
+paraphrase = { title = "Look up a vegetable in the swaps", core = "I type a fruit or vegetable name and see only the matching offers from other growers, so that I'm not paging through the whole feed to find one thing.", subs = ["Matches can be narrowed to people at my own location."] }
+
+[[seed]]
+id = "S22"
+epic = "E4"
+title = "Offer a produce trade"
+tag = "Later"
+core = "I answer someone's surplus post with a trade offer that names what I'd give in return, so that people who grow different crops can swap."
+subs = ["The poster accepts or declines in the app."]
+
+[[seed]]
+id = "S23"
+epic = "E4"
+title = "Log food bank donations"
+tag = "MVP"
+core = "I record each crate I leave for the food bank, with weight and crop, so that the Saturday van driver knows how much to collect."
+subs = ["The site's yearly donated total appears on the home screen.", "Crates must be in the cold store by Friday night.", "The driver confirms pickup in the app."]
+paraphrase = { title = "Record what goes to the charity pantry", core = "I note the kilos and type of vegetable every time I drop a box off for the charity pantry, so that the weekend collector can plan the load.", subs = ["A running annual figure for the location shows on the opening screen.", "Boxes go into the chiller no later than Friday evening.", "The collector ticks off each pickup in the app."] }
+addon = { title = "Food bank donations with a shortage list", alone_title = "Food bank shortage list", core = "I also see what the food bank is short of this week, so I can plant or pick with that in mind.", subs = [] }
+
+[[seed]]
+id = "S24"
+epic = "E4"
+title = "Book a stall at swap day"
+tag = "Not now"
+core = "I book a table at the monthly swap day in the site car park, so that I can bring seedlings, jam and cuttings to trade face to face."
+subs = ["There are twenty tables; anyone else can use a blanket on the grass."]
+
+# ---------------------------------------------------------------- E5
+
+[[seed]]
+id = "S25"
+epic = "E5"
+title = "Book a green waste skip slot"
+tag = "MVP"
+core = "I book a slot to tip woody prunings in the green waste skip, so that the skip isn't overfilled before collection day."
+subs = ["Each slot is 20 minutes and covers one car boot or wheelbarrow load.", "Slots close when the skip is marked three-quarters full."]
+paraphrase = { title = "Reserve a garden refuse bin time", core = "I pick a time to unload branches and hedge cuttings into the big container for garden refuse, so that it doesn't overflow ahead of the council pickup.", subs = ["A booking lasts twenty minutes, enough for one barrow or a full hatchback.", "Booking stops once the container is logged as 75% full."] }
+addon = { title = "Skip bookings with a fill gauge", alone_title = "Skip fill gauge", core = "I also mark how full the skip is when I leave, so the next person knows what space is left.", subs = [] }
+
+[[seed]]
+id = "S26"
+epic = "E5"
+title = "Claim finished compost"
+tag = "MVP+"
+core = "I claim bags of finished compost from the communal bays, so that I can mulch my beds without buying peat-free from the garden centre."
+subs = ["Each plot gets up to six bags per season."]
+addon = { title = "Compost claims with delivery to my plot", alone_title = "Bag delivery to my plot", core = "I also ask for the bags to be barrowed to my plot by the Thursday volunteers.", subs = ["Delivery is for holders with a mobility need, flagged in their profile."] }
+
+[[seed]]
+id = "S27"
+epic = "E5"
+title = "Log a compost bay turn"
+tag = "Lite"
+core = "I log when I turn a compost bay and its temperature reading, so that the committee knows which bays are ready."
+subs = ["A bay above 55°C for three days counts as hot-composted.", "The log shows the last five turns per bay."]
+paraphrase = { title = "Record heap turning and heat", core = "I note the internal heat whenever I fork over one of the shared heaps, so that organisers can see when each has finished breaking down.", subs = ["Three days over 55 degrees marks a heap as properly cooked.", "The five most recent entries for each heap are listed."] }
+
+[[seed]]
+id = "S28"
+epic = "E5"
+title = "What can go in the compost"
+tag = "MVP"
+core = "I look up whether an item can go in the compost bays, so that nobody adds cooked food or diseased plants."
+subs = []
+paraphrase = { title = "Check if something is compostable", core = "I type in a material and get a yes or no on tipping it onto the shared heaps, so that meat scraps and blighted foliage stay out.", subs = [] }
+addon = { title = "Compost look-up with alternatives", alone_title = "Where banned items go instead", core = "I also get told where a banned item should go instead, such as the council food bin or the burn pile.", subs = [] }
+
+[[seed]]
+id = "S29"
+epic = "E5"
+title = "Sign up for a woodchip drop"
+tag = "Later"
+core = "I sign up for part of the next free woodchip drop from a local tree surgeon, choosing how many barrow loads I want, so that I can surface my paths."
+subs = ["The drop happens once sign-ups reach a full lorry, about 20 cubic metres.", "I'm told the drop date two days ahead."]
+addon = { title = "Woodchip drops with a pile map", alone_title = "Woodchip pile map", core = "I also see where on site each drop was tipped and how much of it is left.", subs = [] }
+
+[[seed]]
+id = "S30"
+epic = "E5"
+title = "Report rats at the compost"
+tag = "MVP+"
+core = "I report rats near the compost bays, so that pest control is called."
+subs = ["Three reports in a week trigger an automatic call-out request."]
+
+# ---------------------------------------------------------------- E6
+
+[[seed]]
+id = "S31"
+epic = "E6"
+title = "Sign up for a work party"
+tag = "MVP"
+core = "I sign up for a Saturday work party and pick a task such as hedge cutting or path weeding, so that the organiser knows how many people to expect."
+subs = ["Each task has a cap on helpers.", "I can cancel up to the evening before."]
+paraphrase = { title = "Enrol in a group workday", core = "I register for a weekend volunteering session and choose a job like trimming the hedges or clearing weeds off the walkways, so that whoever runs it can plan for the headcount.", subs = ["Every job allows only a set number of helpers.", "Pulling out is allowed until the night before."] }
+addon = { title = "Work party sign-up with car-sharing", alone_title = "Car-sharing to work parties", core = "I also offer or ask for a lift to the work party with other volunteers who live nearby.", subs = [] }
+
+[[seed]]
+id = "S32"
+epic = "E6"
+title = "Track my volunteer hours"
+tag = "MVP"
+core = "I see my volunteer hours for the year against the twelve hours every plot holder owes, so that I know if I'm short before renewal."
+subs = ["Hours are added when the organiser marks attendance after a work party."]
+paraphrase = { title = "My community-service balance", core = "I check how much of my yearly twelve-hour commitment to helping out I've already done, so that I can catch up ahead of when my lease comes up again.", subs = ["Time is credited once the event lead confirms I turned up."] }
+addon = { title = "Volunteer hours shared across a joint tenancy", alone_title = "Pool hours with a joint tenant", core = "I also pool hours with my joint tenant, so either of us can cover the other's share.", subs = [] }
+
+[[seed]]
+id = "S33"
+epic = "E6"
+title = "Suggest a work party job"
+tag = "Lite"
+core = "I suggest a job for the next work party, like clearing the bramble corner, so that jobs nobody owns get done."
+subs = ["Other holders can upvote suggestions.", "The organiser picks from the top five when planning."]
+
+[[seed]]
+id = "S34"
+epic = "E6"
+title = "Create a work party"
+tag = "MVP"
+core = "I create a work party as organiser, with a date, meeting point and task list, so that holders can sign up in the app."
+subs = ["I can copy last month's work party as a starting point.", "Holders on the site get a notice when it's published."]
+addon = { title = "Work parties with weather cancellation", alone_title = "One-tap weather cancellation", core = "I also cancel a work party with one tap when the forecast turns, and everyone signed up is told.", subs = [] }
+
+[[seed]]
+id = "S35"
+epic = "E6"
+title = "Add my skills to the register"
+tag = "Later"
+core = "I add skills I'm willing to share, such as carpentry or beekeeping, so that the committee knows who to ask for specialist jobs."
+subs = []
+paraphrase = { title = "List what I'm good at", core = "I note the trades and know-how I'd lend a hand with, joinery or keeping bees for instance, so that organisers can find the right person for an expert task.", subs = [] }
+
+[[seed]]
+id = "S36"
+epic = "E6"
+title = "Get a buddy for my first season"
+tag = "MVP+"
+core = "I ask to be paired with an experienced holder for my first season, so that I have someone to ask about sowing times and site etiquette."
+subs = ["Buddies volunteer from their profile and set how many newcomers they'll take.", "Pairs are matched on the same site where possible.", "Either side can end the pairing.", "The pairing ends on its own after twelve months."]
+addon = { title = "Buddy scheme with monthly check-ins", alone_title = "Monthly buddy check-ins", core = "I also get a short check-in message from my buddy each month with a seasonal to-do list.", subs = [] }
+
+# ---------------------------------------------------------------- E7
+
+[[seed]]
+id = "S37"
+epic = "E7"
+title = "Pay annual plot rent"
+tag = "MVP"
+core = "I pay my yearly plot rent by card in the app, so that I don't have to post a cheque to the council."
+subs = ["Rent is due on 1 October and the app shows the amount from September."]
+paraphrase = { title = "Settle the allotment fee online", core = "I clear the annual charge for my allotment online from my phone, so that I'm not mailing paper payments to the local authority.", subs = ["The charge falls due each October the first and appears from the start of September."] }
+addon = { title = "Rent payment with a site fund donation", alone_title = "Site fund donation at checkout", core = "I also add an optional donation to the site fund on top of my rent at checkout.", subs = ["The donation is shown separately on the receipt."] }
+
+[[seed]]
+id = "S38"
+epic = "E7"
+title = "Apply for a concession rate"
+tag = "MVP"
+core = "I apply for the half-price concession by uploading proof of pension or benefits, so that I pay what I can afford."
+subs = ["The treasurer approves or rejects each application.", "Approval lasts one year and must be renewed."]
+paraphrase = { title = "Request the reduced fee", core = "I send in evidence of retirement income or welfare support and ask for the 50% discount, so that the cost stays within my means.", subs = ["Each request is signed off or turned down by the committee's finance officer.", "A granted discount runs for twelve months, then I reapply."] }
+
+[[seed]]
+id = "S39"
+epic = "E7"
+title = "Pay a refundable plot deposit"
+tag = "MVP+"
+core = "I pay a refundable £50 deposit when my tenancy starts and get it back when I leave the plot in good order, so that clearing abandoned plots isn't paid for by everyone."
+subs = ["The deposit is held separately from rent in the accounts.", "The coordinator records the exit check that releases it."]
+
+[[seed]]
+id = "S40"
+epic = "E7"
+title = "Renew by direct debit"
+tag = "Lite"
+core = "I set up a direct debit so my rent renews each October without me doing anything, so that I never lose my plot over a missed payment."
+subs = ["The mandate is collected on 1 October.", "I'm warned by email ten days before each collection."]
+paraphrase = { title = "Automatic yearly fee collection", core = "I authorise the society to take the allotment charge straight from my bank account every autumn, so that forgetting to settle up never costs me my patch.", subs = ["Money leaves my account on the first of the tenth month.", "A notice reaches my inbox ten days ahead of each withdrawal."] }
+addon = { title = "Direct debit with bank switching", alone_title = "Bank account switching", core = "I also move my direct debit to a new bank account without cancelling and starting again.", subs = [] }
+
+[[seed]]
+id = "S41"
+epic = "E7"
+title = "Unpaid rent reminders"
+tag = "MVP"
+core = "I get reminders at seven, fourteen and twenty-eight days if my rent is unpaid, so that I sort it out before my tenancy is at risk."
+subs = ["Each reminder has a pay-now link."]
+
+[[seed]]
+id = "S42"
+epic = "E7"
+title = "Treasurer's monthly income report"
+tag = "Later"
+core = "I export a monthly report of rent, deposits, concessions and donations as treasurer, broken down by site, so that the figures I send the council match the society's bank statement line by line."
+subs = ["The export is a CSV with one row per payment.", "Refunded deposits appear as negative rows.", "Figures are split between the society's share and the council's share.", "Months already sent are locked against edits."]
+
+# ---------------------------------------------------------------- E8
+
+[[seed]]
+id = "S43"
+epic = "E8"
+title = "Record a plot inspection"
+tag = "MVP"
+core = "I walk the site as inspector and score each plot on cultivation from 1 to 5 with a photo, so that neglected plots are spotted early."
+subs = ["Scores work offline and sync when I'm back in signal.", "A plot needs at least 75% cultivated to score 3 or more."]
+paraphrase = { title = "Rate allotments on a grounds round", core = "I go round the grounds as assessor and give every allotment a one-to-five mark for how well it's worked, with a picture, so that abandoned ones get caught before they go wild.", subs = ["Marks are saved without a connection and upload once there's coverage.", "Three or higher requires three-quarters of the area to be growing something."] }
+addon = { title = "Inspections with a history view", alone_title = "Inspection history comparison", core = "I also compare a plot's score and photo with its last three inspections side by side.", subs = [] }
+
+[[seed]]
+id = "S44"
+epic = "E8"
+title = "Receive a non-cultivation warning"
+tag = "MVP"
+core = "I get a formal warning in the app when my plot scores below 3, with the photo and 28 days to improve it, so that I know exactly what's wrong before I risk losing it."
+subs = ["I can reply with a reason, such as illness, and ask for more time.", "A second warning in a year goes to the committee."]
+addon = { title = "Warnings with an early re-inspection", alone_title = "Early re-inspection request", core = "I also ask for an early re-inspection once I've cleared the plot, instead of waiting the full 28 days.", subs = [] }
+
+[[seed]]
+id = "S45"
+epic = "E8"
+title = "Look up site rules"
+tag = "MVP+"
+core = "I read the site rules on my phone, searchable by topic, so that I can check bonfire times or shed heights while I'm on the plot."
+subs = ["Each rule shows the date it last changed."]
+paraphrase = { title = "Search the allotment regulations", core = "I pull up the tenancy regulations on my mobile and search them by subject, so that questions like when fires are allowed or how tall a hut may be get answered on the spot.", subs = ["Every regulation shows when it was last amended."] }
+
+[[seed]]
+id = "S46"
+epic = "E8"
+title = "Request permission for a structure"
+tag = "Lite"
+core = "I ask permission to put up a greenhouse or polytunnel, with its size and a sketch of where it goes, so that I don't have to take it down later."
+subs = ["The coordinator answers within 21 days or the request is approved by default."]
+paraphrase = { title = "Get approval before building", core = "I submit dimensions and a rough layout drawing for a glasshouse or hoop tunnel and wait for sign-off, so that nobody orders me to dismantle it afterwards.", subs = ["No reply from the organiser within three weeks counts as a yes."] }
+addon = { title = "Structure requests with neighbour comments", alone_title = "Neighbour comments on shading", core = "I also let the holders on either side see my request and comment on shading before it's decided.", subs = [] }
+
+[[seed]]
+id = "S47"
+epic = "E8"
+title = "Raise a neighbour dispute"
+tag = "Later"
+core = "I raise a dispute with a neighbouring holder, over something like overhanging fruit trees, and the coordinator mediates in a private thread, so that it stays off the site noticeboard."
+subs = ["Only the two parties and the coordinator see the thread.", "The coordinator can close it with a written outcome."]
+
+[[seed]]
+id = "S48"
+epic = "E8"
+title = "Send a notice to quit"
+tag = "Not now"
+core = "I send a notice to quit through the app as committee secretary, with the evidence attached, so that ending a tenancy follows the written procedure and is on record."
+subs = ["The holder can appeal within 14 days."]

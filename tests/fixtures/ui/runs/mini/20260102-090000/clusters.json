@@ -1,0 +1,167 @@
+{
+  "method": "average_linkage",
+  "threshold": 0.7,
+  "clusters": [
+    {
+      "id": "C1",
+      "members": [
+        "US-4.2",
+        "US-6.2"
+      ],
+      "mean_overlap": 0.985,
+      "edges": [
+        {
+          "a": "US-4.2",
+          "b": "US-6.2",
+          "overlap": 0.985,
+          "merge": 0.92,
+          "relation": "B_contains_A"
+        }
+      ]
+    },
+    {
+      "id": "C2",
+      "members": [
+        "US-3.1",
+        "US-4.1"
+      ],
+      "mean_overlap": 0.97,
+      "edges": [
+        {
+          "a": "US-3.1",
+          "b": "US-4.1",
+          "overlap": 0.97,
+          "merge": 0.89,
+          "relation": "B_contains_A"
+        }
+      ]
+    },
+    {
+      "id": "C3",
+      "members": [
+        "US-7.1",
+        "US-8.1"
+      ],
+      "mean_overlap": 0.955,
+      "edges": [
+        {
+          "a": "US-7.1",
+          "b": "US-8.1",
+          "overlap": 0.955,
+          "merge": 0.805,
+          "relation": "duplicate"
+        }
+      ]
+    },
+    {
+      "id": "C4",
+      "members": [
+        "US-8.99",
+        "US-7.5"
+      ],
+      "mean_overlap": 0.92,
+      "edges": [
+        {
+          "a": "US-8.99",
+          "b": "US-7.5",
+          "overlap": 0.92,
+          "merge": 0.56,
+          "relation": "duplicate"
+        }
+      ]
+    },
+    {
+      "id": "C5",
+      "members": [
+        "US-7.2",
+        "US-8.3"
+      ],
+      "mean_overlap": 0.865,
+      "edges": [
+        {
+          "a": "US-7.2",
+          "b": "US-8.3",
+          "overlap": 0.865,
+          "merge": 0.75,
+          "relation": "duplicate"
+        }
+      ]
+    },
+    {
+      "id": "C6",
+      "members": [
+        "US-6.1",
+        "US-7.3"
+      ],
+      "mean_overlap": 0.855,
+      "edges": [
+        {
+          "a": "US-6.1",
+          "b": "US-7.3",
+          "overlap": 0.855,
+          "merge": 0.79,
+          "relation": "B_contains_A"
+        }
+      ]
+    },
+    {
+      "id": "C7",
+      "members": [
+        "US-1.3",
+        "US-2.2"
+      ],
+      "mean_overlap": 0.83,
+      "edges": [
+        {
+          "a": "US-1.3",
+          "b": "US-2.2",
+          "overlap": 0.83,
+          "merge": 0.0,
+          "relation": "partial_overlap"
+        }
+      ]
+    },
+    {
+      "id": "C8",
+      "members": [
+        "US-1.1",
+        "US-8.2"
+      ],
+      "mean_overlap": 0.81,
+      "edges": [
+        {
+          "a": "US-1.1",
+          "b": "US-8.2",
+          "overlap": 0.81,
+          "merge": 0.59,
+          "relation": "duplicate"
+        }
+      ]
+    },
+    {
+      "id": "C9",
+      "members": [
+        "US-1.2",
+        "US-4.3"
+      ],
+      "mean_overlap": 0.785,
+      "edges": [
+        {
+          "a": "US-1.2",
+          "b": "US-4.3",
+          "overlap": 0.785,
+          "merge": 0.0,
+          "relation": "partial_overlap"
+        }
+      ]
+    }
+  ],
+  "singletons": [
+    "US-3.2",
+    "US-3.3",
+    "US-3.4",
+    "US-5.1",
+    "US-6.3",
+    "US-7.6"
+  ]
+}

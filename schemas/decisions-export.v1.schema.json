@@ -1,0 +1,143 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://tesselint.invalid/schemas/decisions-export.v1.schema.json",
+  "title": "TesseLint decisions export v1",
+  "description": "Accepted review decisions to apply to the source, in order (docs/ui/DESIGN.md §2 Export, §7.4): merges by kept story, then splits, then overlaps (untangle). The session that edits the source applies each item only if every story's text still hashes to text_hash, else skips it and reports the ID.",
+  "type": "object",
+  "required": ["format", "version", "run", "items"],
+  "properties": {
+    "format": { "const": "tesselint/decisions-export" },
+    "version": { "const": 1 },
+    "run": {
+      "description": "The run the decisions were checked against.",
+      "type": "object",
+      "required": ["ref", "snapshot_sha256"],
+      "properties": {
+        "ref": { "$ref": "#/$defs/ref" },
+        "snapshot_sha256": { "$ref": "#/$defs/sha256" }
+      },
+      "additionalProperties": false
+    },
+    "items": {
+      "description": "In application order; `order` numbers them from 1.",
+      "type": "array",
+      "items": { "$ref": "#/$defs/item" }
+    }
+  },
+  "additionalProperties": false,
+  "$defs": {
+    "ref": {
+      "description": "Run directory under the runs root with `/` replaced by `~` (§4.2).",
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_-][A-Za-z0-9._-]*(~[A-Za-z0-9_-][A-Za-z0-9._-]*){0,3}$"
+    },
+    "sha256": { "type": "string", "pattern": "^[0-9a-f]{64}$" },
+    "id": { "type": "string", "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]{0,63}$" },
+    "key": {
+      "description": "proposal_key (§3): merge:<keep>><drop>, split:<id>, or overlap: plus the sorted member IDs joined by +.",
+      "type": "string",
+      "pattern": "^(?:merge:[A-Za-z0-9][A-Za-z0-9._-]{0,63}>[A-Za-z0-9][A-Za-z0-9._-]{0,63}|split:[A-Za-z0-9][A-Za-z0-9._-]{0,63}|overlap:[A-Za-z0-9][A-Za-z0-9._-]{0,63}(?:\\+[A-Za-z0-9][A-Za-z0-9._-]{0,63})+)$"
+    },
+    "story": {
+      "description": "A story as decided: `text` is the rendered full text whose hash is `text_hash` (text_hash(render(story, \"full\"))).",
+      "type": "object",
+      "required": ["id", "title", "text_hash", "text"],
+      "properties": {
+        "id": { "$ref": "#/$defs/id" },
+        "title": { "type": "string", "minLength": 1 },
+        "text_hash": { "$ref": "#/$defs/sha256" },
+        "text": { "type": "string", "minLength": 1 }
+      },
+      "additionalProperties": false
+    },
+    "evidence": {
+      "description": "Why the item was proposed: the threshold value, plus m and o for a merge, the bundled score for a split, mean o for an overlap, and the proposal's evidence lines.",
+      "type": "object",
+      "required": ["decisive_value"],
+      "properties": {
+        "decisive_value": { "type": "number" },
+        "borderline": { "type": "boolean" },
+        "relation": { "enum": ["duplicate", "containment"] },
+        "m": { "type": "number", "minimum": 0, "maximum": 1 },
+        "o": { "type": "number", "minimum": 0, "maximum": 1 },
+        "bundled": { "type": "number", "minimum": 0, "maximum": 1 },
+        "mean_o": { "type": "number", "minimum": 0, "maximum": 1 },
+        "lines": { "type": "array", "items": { "type": "string" } }
+      },
+      "additionalProperties": false
+    },
+    "item": {
+      "type": "object",
+      "required": [
+        "order",
+        "key",
+        "action",
+        "stories",
+        "note",
+        "evidence",
+        "status",
+        "warnings",
+        "instruction"
+      ],
+      "properties": {
+        "order": { "type": "integer", "minimum": 1 },
+        "key": { "$ref": "#/$defs/key" },
+        "action": {
+          "description": "An accepted merge, split or overlap; an overlap is exported as untangle.",
+          "enum": ["merge", "split", "untangle"]
+        },
+        "stories": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "$ref": "#/$defs/story" }
+        },
+        "note": { "type": "string" },
+        "evidence": { "$ref": "#/$defs/evidence" },
+        "status": {
+          "description": "current: every hash matches the run; stale: a text changed (exported only with include_stale); missing: a story is gone (§3).",
+          "enum": ["current", "stale", "missing"]
+        },
+        "warnings": {
+          "description": "E.g. a merge plus a split on one story, or a merge chain X→Y, Y→Z.",
+          "type": "array",
+          "items": { "type": "string", "minLength": 1 }
+        },
+        "instruction": {
+          "description": "The item's fixed Do line (§7.4).",
+          "type": "string",
+          "minLength": 1
+        }
+      },
+      "additionalProperties": false,
+      "allOf": [
+        {
+          "if": { "properties": { "action": { "const": "merge" } } },
+          "then": {
+            "properties": {
+              "key": { "pattern": "^merge:" },
+              "stories": { "minItems": 2, "maxItems": 2 }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "action": { "const": "split" } } },
+          "then": {
+            "properties": {
+              "key": { "pattern": "^split:" },
+              "stories": { "maxItems": 1 }
+            }
+          }
+        },
+        {
+          "if": { "properties": { "action": { "const": "untangle" } } },
+          "then": {
+            "properties": {
+              "key": { "pattern": "^overlap:" },
+              "stories": { "minItems": 2 }
+            }
+          }
+        }
+      ]
+    }
+  }
+}

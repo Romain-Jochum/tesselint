@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a security problem
+    url: https://github.com/Romain-Jochum/tesselint/security/advisories/new
+    about: Report vulnerabilities privately, not in a public issue (see SECURITY.md).
+  - name: Input format questions
+    url: https://github.com/Romain-Jochum/tesselint/blob/main/docs/input/INPUT.md
+    about: The stories v1 format, the Markdown shape and the prompt for converting other formats.

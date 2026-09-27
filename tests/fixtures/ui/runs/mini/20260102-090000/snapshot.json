@@ -1,0 +1,412 @@
+{
+  "format": "tesselint/stories",
+  "version": 1,
+  "render": "md-clean/1",
+  "source": {
+    "path": "synth/stories.md",
+    "section": "## 4. User stories",
+    "sha256": "cc4d150c625d9af770377c9d94ba688c9a69ea814d12e5d1ed6581a95ff111b4",
+    "line_offset": 2,
+    "converter": "tesselint synth/1"
+  },
+  "generated_at": "2026-01-01T08:00:00Z",
+  "priorities": [
+    "MVP",
+    "MVP+",
+    "Lite",
+    "Later",
+    "Not now",
+    "decision"
+  ],
+  "epics": [
+    {
+      "id": "E1",
+      "name": "Waiting list and plot allocation",
+      "source_line": 5
+    },
+    {
+      "id": "E2",
+      "name": "Tool shed lending",
+      "source_line": 16
+    },
+    {
+      "id": "E3",
+      "name": "Water supply and irrigation",
+      "source_line": 22
+    },
+    {
+      "id": "E4",
+      "name": "Produce and seed sharing",
+      "source_line": 34
+    },
+    {
+      "id": "E5",
+      "name": "Compost and green waste",
+      "source_line": 45
+    },
+    {
+      "id": "E6",
+      "name": "Work parties and volunteering",
+      "source_line": 50
+    },
+    {
+      "id": "E7",
+      "name": "Rent, deposits and payments",
+      "source_line": 61
+    },
+    {
+      "id": "E8",
+      "name": "Site rules and inspections",
+      "source_line": 76
+    }
+  ],
+  "stories": [
+    {
+      "id": "US-1.90",
+      "epic": "E1",
+      "title": "Former allocation rules",
+      "tag": "MVP",
+      "priority": "MVP",
+      "status": "removed",
+      "merged_into": "US-1.1",
+      "source_line": 6
+    },
+    {
+      "id": "US-1.1",
+      "epic": "E1",
+      "title": "Rate allotments on a grounds round",
+      "tag": "MVP",
+      "priority": "MVP",
+      "statement": "I go round the grounds as assessor and give every allotment a one-to-five mark for how well it's worked, with a picture, so that abandoned ones get caught before they go wild.",
+      "details": [
+        "Marks are saved without a connection and upload once there's coverage.",
+        "Three or higher requires three-quarters of the area to be growing something."
+      ],
+      "status": "live",
+      "source_line": 7
+    },
+    {
+      "id": "US-1.2",
+      "epic": "E1",
+      "title": "Accept or decline a plot offer",
+      "tag": "MVP",
+      "priority": "MVP",
+      "statement": "I get an offer when a plot comes free and I'm next in line, and I accept or decline it within fourteen days, so that plots don't sit empty. The offer also names the nearest water tap.",
+      "details": [
+        "The offer shows the plot size, a photo and the annual rent.",
+        "If I don't answer in fourteen days, the offer goes to the next person.",
+        "Declining twice moves me to the bottom of that list."
+      ],
+      "status": "live",
+      "source_line": 10
+    },
+    {
+      "id": "US-1.3",
+      "epic": "E1",
+      "title": "Split a full plot into halves",
+      "tag": "Later",
+      "priority": "Later",
+      "statement": "I split a full-size plot into two half plots with their own numbers as site coordinator, so that more people on the list can start growing sooner.",
+      "details": [],
+      "status": "live",
+      "source_line": 14
+    },
+    {
+      "id": "US-2.1",
+      "epic": "E2",
+      "title": "Donate a tool to the shed",
+      "tag": "Later",
+      "priority": "Later",
+      "status": "removed",
+      "merged_into": "US-3.2",
+      "removed_reason": "the wish-list story covers donations",
+      "source_line": 17
+    },
+    {
+      "id": "US-2.2",
+      "epic": "E2",
+      "title": "Check a tool back in",
+      "tag": "Lite",
+      "priority": "Lite",
+      "statement": "I check a tool back in by scanning the QR tag on it, so that the next borrower can see it's back on the hook.",
+      "details": [
+        "If I haven't checked in an hour after my slot ends, the coordinator gets an alert.",
+        "Fuel level is recorded for petrol tools."
+      ],
+      "status": "live",
+      "source_line": 18
+    },
+    {
+      "id": "US-3.1",
+      "epic": "E3",
+      "title": "See my plot's water use",
+      "tag": "Lite",
+      "priority": "Lite",
+      "statement": "I see how many litres my plot used each week this season, taken from its sub-meter, so that I can tell whether mulching is actually saving water.",
+      "details": [
+        "The chart compares my use with the site average for plots of the same size."
+      ],
+      "status": "live",
+      "source_line": 23
+    },
+    {
+      "id": "US-3.2",
+      "epic": "E3",
+      "title": "Tool donations with a wish list",
+      "tag": "Later",
+      "priority": "Later",
+      "statement": "I offer a tool I no longer need to the shared shed, and the coordinator accepts it into the catalogue, so that others can borrow it. I also see a wish list of tools the shed is short of, ranked by how often people asked for them.",
+      "details": [],
+      "status": "live",
+      "source_line": 25
+    },
+    {
+      "id": "US-3.3",
+      "epic": "E3",
+      "title": "Join a watering rota and Unpaid rent reminders",
+      "tag": "MVP+",
+      "priority": "MVP+",
+      "statement": "I join a watering rota with the neighbours in my row, so that our plots get watered while any of us is away. I get reminders at seven, fourteen and twenty-eight days if my rent is unpaid, so that I sort it out before my tenancy is at risk.",
+      "details": [
+        "Each person picks the days they cover.",
+        "I get a reminder the evening before my turn.",
+        "I can swap a day with someone else on the rota.",
+        "Each reminder has a pay-now link."
+      ],
+      "status": "live",
+      "source_line": 26
+    },
+    {
+      "id": "US-3.4",
+      "epic": "E3",
+      "title": "Check water tank levels",
+      "tag": "MVP",
+      "priority": "MVP",
+      "statement": "I check how full each water tank on my site is before I walk down, so that I bring cans from home when the tanks are low.",
+      "details": [
+        "Levels come from float sensors and update every thirty minutes."
+      ],
+      "status": "live",
+      "source_line": 31
+    },
+    {
+      "id": "US-4.1",
+      "epic": "E4",
+      "title": "Water use with a seasonal allowance",
+      "tag": "Lite",
+      "priority": "Lite",
+      "statement": "I see how many litres my plot used each week this season, taken from its sub-meter, so that I can tell whether mulching is actually saving water. I also get a seasonal water allowance for my plot and see how much of it is left.",
+      "details": [
+        "The chart compares my use with the site average for plots of the same size.",
+        "The allowance scales with plot size."
+      ],
+      "status": "live",
+      "source_line": 35
+    },
+    {
+      "id": "US-4.2",
+      "epic": "E4",
+      "title": "Post surplus produce",
+      "tag": "MVP",
+      "priority": "MVP",
+      "statement": "",
+      "details": [
+        "Posts expire after three days.",
+        "I can mark a post as gone."
+      ],
+      "status": "live",
+      "source_line": 38
+    },
+    {
+      "id": "US-4.3",
+      "epic": "E4",
+      "title": "Borrow from the seed library",
+      "tag": "Lite",
+      "priority": "Lite",
+      "statement": "I borrow seed packets from the site seed library and return saved seed from my own crop at the end of the season, so that the library keeps itself stocked.",
+      "details": [
+        "Each variety shows germination notes from past borrowers.",
+        "I can take up to five packets at a time."
+      ],
+      "status": "live",
+      "source_line": 41
+    },
+    {
+      "id": "US-5.1",
+      "epic": "E5",
+      "title": "Book a green waste skip slot",
+      "tag": "MVP",
+      "priority": "MVP",
+      "statement": "I book a slot to tip woody prunings in the green waste skip, so that the skip isn't overfilled before collection day.",
+      "details": [
+        "Each slot is 20 minutes and covers one car boot or wheelbarrow load.",
+        "Slots close when the skip is marked three-quarters full."
+      ],
+      "status": "live",
+      "source_line": 46
+    },
+    {
+      "id": "US-6.1",
+      "epic": "E6",
+      "title": "Track my volunteer hours",
+      "tag": "MVP",
+      "priority": "MVP",
+      "statement": "I see my volunteer hours for the year against the twelve hours every plot holder owes, so that I know if I'm short before renewal.",
+      "details": [
+        "Hours are added when the organiser marks attendance after a work party."
+      ],
+      "status": "live",
+      "source_line": 51
+    },
+    {
+      "id": "US-6.2",
+      "epic": "E6",
+      "title": "Suggest a work party job and Report rats at the compost",
+      "tag": "Lite",
+      "priority": "Lite",
+      "statement": "I suggest a job for the next work party, like clearing the bramble corner, so that jobs nobody owns get done. I report rats near the compost bays, so that pest control is called.",
+      "details": [
+        "Other holders can upvote suggestions.",
+        "The organiser picks from the top five when planning.",
+        "Three reports in a week trigger an automatic call-out request."
+      ],
+      "status": "live",
+      "source_line": 53
+    },
+    {
+      "id": "US-6.3",
+      "epic": "E6",
+      "title": "Sign up for a work party",
+      "tag": "MVP; the brief Lite",
+      "priority": "MVP",
+      "statement": "I sign up for a Saturday work party and pick a task such as hedge cutting or path weeding, so that the organiser knows how many people to expect.",
+      "details": [
+        "Each task has a cap on helpers.",
+        "I can cancel up to the evening before."
+      ],
+      "status": "live",
+      "source_line": 57
+    },
+    {
+      "id": "US-7.1",
+      "epic": "E7",
+      "title": "Pay annual plot rent",
+      "tag": "MVP",
+      "priority": "MVP",
+      "statement": "I pay my yearly plot rent by card in the app, so that I don't have to post a cheque to the council.",
+      "details": [
+        "Rent is due on 1 October and the app shows the amount from September."
+      ],
+      "status": "live",
+      "source_line": 62
+    },
+    {
+      "id": "US-7.2",
+      "epic": "E7",
+      "title": "Apply for a concession rate",
+      "tag": "MVP",
+      "priority": "MVP",
+      "statement": "I apply for the half-price concession by uploading proof of pension or benefits, so that I pay what I can afford.",
+      "details": [
+        "The treasurer approves or rejects each application.",
+        "Approval lasts one year and must be renewed."
+      ],
+      "status": "live",
+      "source_line": 64
+    },
+    {
+      "id": "US-7.3",
+      "epic": "E7",
+      "title": "Volunteer hours shared across a joint tenancy",
+      "tag": "MVP",
+      "priority": "MVP",
+      "statement": "I see my volunteer hours for the year against the twelve hours every plot holder owes, so that I know if I'm short before renewal. I also pool hours with my joint tenant, so either of us can cover the other's share.",
+      "details": [
+        "Hours are added when the organiser marks attendance after a work party."
+      ],
+      "status": "live",
+      "source_line": 67
+    },
+    {
+      "id": "US-8.99",
+      "epic": "E7",
+      "title": "Pay a refundable plot deposit",
+      "tag": "MVP+",
+      "priority": "MVP+",
+      "statement": "I pay a refundable £50 deposit when my tenancy starts and get it back when I leave the plot in good order, so that clearing abandoned plots isn't paid for by everyone.",
+      "details": [
+        "The deposit is held separately from rent in the accounts.",
+        "The coordinator records the exit check that releases it."
+      ],
+      "status": "live",
+      "source_line": 69
+    },
+    {
+      "id": "US-7.5",
+      "epic": "E7",
+      "title": "Renew by direct debit",
+      "tag": "Lite",
+      "priority": "Lite",
+      "statement": "I set up a direct debit so my rent renews each October without me doing anything, so that I never lose my plot over a missed payment.",
+      "details": [
+        "The mandate is collected on 1 October.",
+        "I'm warned by email ten days before each collection."
+      ],
+      "status": "live",
+      "source_line": 72
+    },
+    {
+      "id": "US-7.6",
+      "epic": "E7",
+      "title": "Upload concession proof",
+      "tag": "Lite",
+      "statement": "I upload a photo of my pension or benefits letter from my phone, so that the treasurer can check my concession.",
+      "details": [
+        "The upload takes a photo or a PDF."
+      ],
+      "status": "live"
+    },
+    {
+      "id": "US-8.1",
+      "epic": "E8",
+      "title": "Settle the allotment fee online",
+      "tag": "MVP",
+      "priority": "MVP",
+      "statement": "I clear the annual charge for my allotment online from my phone, so that I'm not mailing paper payments to the local authority. I also get the receipt by email.",
+      "details": [
+        "The charge falls due each October the first and appears from the start of September."
+      ],
+      "status": "live",
+      "source_line": 77
+    },
+    {
+      "id": "US-8.2",
+      "epic": "E8",
+      "title": "Record a plot inspection",
+      "tag": "MVP",
+      "priority": "MVP",
+      "statement": "I walk the site as inspector and score each plot on cultivation from 1 to 5 with a photo, so that neglected plots are spotted early.",
+      "details": [
+        "Scores work offline and sync when I'm back in signal.",
+        "A plot needs at least 75% cultivated to score 3 or more."
+      ],
+      "status": "live",
+      "source_line": 79
+    },
+    {
+      "id": "US-8.3",
+      "epic": "E8",
+      "title": "Request the reduced fee",
+      "tag": "MVP",
+      "priority": "MVP",
+      "statement": "I send in evidence of retirement income or welfare support and ask for the 50% discount, so that the cost stays within my means.",
+      "details": [
+        "Each request is signed off or turned down by the committee's finance officer.",
+        "A granted discount runs for twelve months, then I reapply."
+      ],
+      "status": "live",
+      "source_line": 82
+    }
+  ],
+  "x-synthetic": true
+}

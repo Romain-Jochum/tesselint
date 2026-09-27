@@ -27,7 +27,7 @@ jobs:
       - run: uv sync --locked
       - name: Cache the model2vec model (slow tests)
         id: hf-cache
-        uses: actions/cache@v4
+        uses: actions/cache@v6
         with:
           path: ~/.cache/huggingface
           key: hf-potion-retrieval-32M
